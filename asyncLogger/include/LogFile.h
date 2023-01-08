@@ -2,15 +2,15 @@
 #define ASYNC_LOGGER_LOGFILE
 
 #include "FileAppender.h"
-#include "noncopyable.h"
+#include "noncopyableLog.h"
 #include <ctime>
 #include <sys/types.h>
 #include <memory>
 #include <mutex>
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
-    class LogFile : noncopyable
+    class LogFile : noncopyableLog
     {
     public:
         explicit LogFile(const std::string &basename, off64_t rollSize, bool threadSafe = true, int flushInterval = 3, int checkEveryN = 1024);

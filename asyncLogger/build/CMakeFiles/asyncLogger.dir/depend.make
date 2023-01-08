@@ -14,7 +14,7 @@ CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/FixedBuffer.hpp
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/LogFile.h
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/Logger.h
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/LoggerUtil.h
-CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/noncopyable.h
+CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../include/noncopyableLog.h
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../src/AsyncLogging.cc
 
 CMakeFiles/asyncLogger.dir/src/Config.cc.o: ../dependencies/fmt/include/fmt/core.h
@@ -38,7 +38,7 @@ CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/FileAppender.h
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/FixedBuffer.hpp
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/Logger.h
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/LoggerUtil.h
-CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/noncopyable.h
+CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../include/noncopyableLog.h
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../src/FileAppender.cc
 
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../dependencies/fmt/include/fmt/color.h
@@ -54,7 +54,7 @@ CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/FixedBuffer.hpp
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/LogFile.h
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/Logger.h
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/LoggerUtil.h
-CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/noncopyable.h
+CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../include/noncopyableLog.h
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../src/LogFile.cc
 
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../dependencies/fmt/include/fmt/chrono.h
@@ -70,7 +70,7 @@ CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/FixedBuffer.hpp
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/Logger.h
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/LoggerUtil.h
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/ProcessInfo.h
-CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/noncopyable.h
+CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../include/noncopyableLog.h
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../src/Logger.cc
 
 CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o: ../include/LoggerUtil.h

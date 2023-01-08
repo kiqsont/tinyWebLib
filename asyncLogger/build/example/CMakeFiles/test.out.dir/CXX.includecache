@@ -103,8 +103,8 @@ FixedBuffer.hpp
 ../include/FixedBuffer.hpp
 CountDownLatch.h
 ../include/CountDownLatch.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 vector
 -
 mutex
@@ -137,8 +137,8 @@ cstring
 -
 string
 -
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 
 ../include/Logger.h
 cstdio
@@ -155,14 +155,14 @@ fmt/ranges.h
 ../include/fmt/ranges.h
 fmt/color.h
 ../include/fmt/color.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 Config.h
 ../include/Config.h
 AsyncLogging.h
 ../include/AsyncLogging.h
 
-../include/noncopyable.h
+../include/noncopyableLog.h
 
 /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/dependencies/Timer.hpp
 chrono

@@ -5,7 +5,7 @@
 #include <cassert>
 #include <cstring>
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 
 thread_local char t_errnobuf[512]{0};
 thread_local char t_time[64];

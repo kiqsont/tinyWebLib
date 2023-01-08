@@ -3,15 +3,15 @@
 
 #include <cstring>
 #include <string>
-#include "noncopyable.h"
+#include "noncopyableLog.h"
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
     constexpr int kSmallBuffer = 4096;        // 4k
     constexpr int kLargeBuffer = 4069 * 1024; // 4m
 
     template <int SIZE>
-    class FixedBuffer : noncopyable
+    class FixedBuffer : noncopyableLog
     {
     public:
         constexpr FixedBuffer() : m_cur_buf(m_buffer) {}

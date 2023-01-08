@@ -1,6 +1,6 @@
 #include "CountDownLatch.h"
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 CountDownLatch::CountDownLatch(int count)
     : m_count(count)
 {

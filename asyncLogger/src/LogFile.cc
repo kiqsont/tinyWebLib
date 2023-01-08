@@ -5,7 +5,7 @@
 #include "Logger.h"
 #include <iostream>
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 
 LogFile::LogFile(const std::string &basename, off64_t rollSize, bool threadSafe, int flushInterval, int checkEveryN)
     : m_basename(basename), m_rollSize(rollSize), m_flushInterval(flushInterval), m_checkEveryN(checkEveryN), m_mutex(threadSafe ? std::make_unique<std::mutex>() : nullptr)

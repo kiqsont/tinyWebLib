@@ -16,7 +16,7 @@ namespace detail // encapsule timerfd functions
         int timerfd = ::timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK | TFD_CLOEXEC);
         if (timerfd < 0)
         {
-            LOG_FATAL("Failed in TimerQueue::detail::timerfd_create");
+            fatal("Failed in TimerQueue::detail::timerfd_create");
         }
         return timerfd;
     }

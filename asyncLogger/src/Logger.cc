@@ -8,9 +8,9 @@
 #include "ProcessInfo.h"
 
 using namespace asyncLogger;
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 
-#define LOG_CONFIG detail::Config::instance()
+#define LOG_CONFIG asyncLoggerDetail::Config::instance()
 
 void asyncLogger::Config::Set(const asyncLogger::Config &config)
 {
@@ -49,15 +49,15 @@ inline fmt::color GET_COLOR_BY_LEVEL(int level)
     return s_color[level];
 }
 
-detail::Logger::Logger() { init_data(); }
+asyncLoggerDetail::Logger::Logger() { init_data(); }
 
-detail::Logger &detail::Logger::getInstance()
+asyncLoggerDetail::Logger &asyncLoggerDetail::Logger::getInstance()
 {
     static Logger logger;
     return logger;
 }
 
-void detail::Logger::init_data()
+void asyncLoggerDetail::Logger::init_data()
 {
     if (LOG_CONFIG.basename() != nullptr)
     {
@@ -66,7 +66,7 @@ void detail::Logger::init_data()
     }
 }
 
-void detail::Logger::interval_log(const context &ctx)
+void asyncLoggerDetail::Logger::interval_log(const context &ctx)
 {
     flockfile(stdout);
     fmt::print(stdout, fg(fmt::color::green),
@@ -74,7 +74,7 @@ void detail::Logger::interval_log(const context &ctx)
     funlockfile(stdout);
 }
 
-void detail::Logger::LogFile(detail::context const &ctx)
+void asyncLoggerDetail::Logger::LogFile(asyncLoggerDetail::context const &ctx)
 {
     int tid = ProcessInfo::GetTid();
     auto *level_text = GET_LEVEL_TEXT(ctx.level);
@@ -139,7 +139,7 @@ void detail::Logger::LogFile(detail::context const &ctx)
     m_logging->append(buffer.data(), buffer.size());
 }
 
-void detail::Logger::LogConsole(const asyncLogger::detail::context &ctx)
+void asyncLoggerDetail::Logger::LogConsole(const asyncLogger::asyncLoggerDetail::context &ctx)
 {
     flockfile(stdout);
 
@@ -210,7 +210,7 @@ void detail::Logger::LogConsole(const asyncLogger::detail::context &ctx)
     funlockfile(stdout);
 }
 
-void detail::Logger::DoLog(detail::context const &ctx)
+void asyncLoggerDetail::Logger::DoLog(asyncLoggerDetail::context const &ctx)
 {
     if (m_logging)
     {

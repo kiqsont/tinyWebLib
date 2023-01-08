@@ -11,7 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyWebLib.dir/src/EventLoopThread.cc.o"
   "CMakeFiles/tinyWebLib.dir/src/EventLoopThreadPool.cc.o"
   "CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o"
-  "CMakeFiles/tinyWebLib.dir/src/Logger.cc.o"
   "CMakeFiles/tinyWebLib.dir/src/Poller.cc.o"
   "CMakeFiles/tinyWebLib.dir/src/Socket.cc.o"
   "CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o"

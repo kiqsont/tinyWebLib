@@ -127,8 +127,8 @@ FixedBuffer.hpp
 ../include/FixedBuffer.hpp
 CountDownLatch.h
 ../include/CountDownLatch.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 vector
 -
 mutex
@@ -157,8 +157,8 @@ mutex
 -
 
 ../include/FileAppender.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 cstdio
 -
 sys/types.h
@@ -171,14 +171,14 @@ cstring
 -
 string
 -
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 
 ../include/LogFile.h
 FileAppender.h
 ../include/FileAppender.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 ctime
 -
 sys/types.h
@@ -203,8 +203,8 @@ fmt/ranges.h
 ../include/fmt/ranges.h
 fmt/color.h
 ../include/fmt/color.h
-noncopyable.h
-../include/noncopyable.h
+noncopyableLog.h
+../include/noncopyableLog.h
 Config.h
 ../include/Config.h
 AsyncLogging.h
@@ -224,7 +224,7 @@ unistd.h
 string
 -
 
-../include/noncopyable.h
+../include/noncopyableLog.h
 
 /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/AsyncLogging.cc
 AsyncLogging.h

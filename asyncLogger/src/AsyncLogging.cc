@@ -7,7 +7,7 @@
 #include "LogFile.h"
 #include "LoggerUtil.h"
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 using namespace asyncLogger;
 
 AsyncLogging::AsyncLogging(const std::string &basename, off64_t rollSize, int flushInterval)

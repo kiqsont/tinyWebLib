@@ -11,7 +11,7 @@ example/CMakeFiles/test.out.dir/test.cc.o: ../include/Config.h
 example/CMakeFiles/test.out.dir/test.cc.o: ../include/CountDownLatch.h
 example/CMakeFiles/test.out.dir/test.cc.o: ../include/FixedBuffer.hpp
 example/CMakeFiles/test.out.dir/test.cc.o: ../include/Logger.h
-example/CMakeFiles/test.out.dir/test.cc.o: ../include/noncopyable.h
+example/CMakeFiles/test.out.dir/test.cc.o: ../include/noncopyableLog.h
 example/CMakeFiles/test.out.dir/test.cc.o: ../dependencies/Timer.hpp
 example/CMakeFiles/test.out.dir/test.cc.o: ../example/test.cc
 

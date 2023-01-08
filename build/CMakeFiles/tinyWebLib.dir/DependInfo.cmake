@@ -14,7 +14,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThread.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/EventLoopThread.cc.o"
   "/home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThreadPool.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/EventLoopThreadPool.cc.o"
   "/home/kiqsont/program/muduo/tinyWebLib/src/InetAddress.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o"
-  "/home/kiqsont/program/muduo/tinyWebLib/src/Logger.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/Logger.cc.o"
   "/home/kiqsont/program/muduo/tinyWebLib/src/Poller.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/Poller.cc.o"
   "/home/kiqsont/program/muduo/tinyWebLib/src/Socket.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/Socket.cc.o"
   "/home/kiqsont/program/muduo/tinyWebLib/src/TcpClient.cc" "/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o"

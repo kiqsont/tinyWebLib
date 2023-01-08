@@ -28,7 +28,7 @@ namespace asyncLogger
         LEVEL_COUNT
     };
 
-    namespace detail
+    namespace asyncLoggerDetail
     {
         using callback_t = std::function<void(fmt::memory_buffer &)>;
 

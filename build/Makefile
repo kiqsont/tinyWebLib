@@ -393,33 +393,6 @@ src/InetAddress.cc.s:
 	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.s
 .PHONY : src/InetAddress.cc.s
 
-src/Logger.o: src/Logger.cc.o
-
-.PHONY : src/Logger.o
-
-# target to build an object file
-src/Logger.cc.o:
-	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/src/Logger.cc.o
-.PHONY : src/Logger.cc.o
-
-src/Logger.i: src/Logger.cc.i
-
-.PHONY : src/Logger.i
-
-# target to preprocess a source file
-src/Logger.cc.i:
-	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/src/Logger.cc.i
-.PHONY : src/Logger.cc.i
-
-src/Logger.s: src/Logger.cc.s
-
-.PHONY : src/Logger.s
-
-# target to generate assembly for a file
-src/Logger.cc.s:
-	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/src/Logger.cc.s
-.PHONY : src/Logger.cc.s
-
 src/Poller.o: src/Poller.cc.o
 
 .PHONY : src/Poller.o
@@ -702,9 +675,6 @@ help:
 	@echo "... src/InetAddress.o"
 	@echo "... src/InetAddress.i"
 	@echo "... src/InetAddress.s"
-	@echo "... src/Logger.o"
-	@echo "... src/Logger.i"
-	@echo "... src/Logger.s"
 	@echo "... src/Poller.o"
 	@echo "... src/Poller.i"
 	@echo "... src/Poller.s"

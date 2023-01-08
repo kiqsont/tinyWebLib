@@ -4,7 +4,7 @@
 #include "Logger.h"
 #include <unistd.h>
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 
 FileAppender::FileAppender(const std::string &filename)
 {

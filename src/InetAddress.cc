@@ -3,13 +3,15 @@
 
 #include <cstring>
 
+using namespace asyncLogger;
+
 sockaddr_in InetAddress::getLocalAddr(int sockfd)
 {
     sockaddr_in localaddr{0};
     socklen_t addrlen = sizeof localaddr;
     if (::getsockname(sockfd, (sockaddr *)&localaddr, &addrlen))
     {
-        LOG_ERROR("Socket::getLocalAddr");
+        error("Socket::getLocalAddr");
     }
     return localaddr;
 }
@@ -20,7 +22,7 @@ sockaddr_in InetAddress::getPeerAddr(int sockfd)
     socklen_t addrlen = sizeof peeraddr;
     if (::getpeername(sockfd, (sockaddr *)&peeraddr, &addrlen))
     {
-        LOG_ERROR("Socket::getLocalAddr");
+        error("Socket::getLocalAddr");
     }
     return peeraddr;
 }

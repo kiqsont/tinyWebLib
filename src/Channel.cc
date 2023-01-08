@@ -2,6 +2,8 @@
 #include "Logger.h"
 #include "EventLoop.h"
 
+using namespace asyncLogger;
+
 Channel::Channel(EventLoop *loop, int fd)
     : loop_(loop), fd_(fd), events_(0), revents_(0), index_(-1), tied_(false)
 {
@@ -12,7 +14,7 @@ Channel::~Channel(){}
 */
 void Channel::handleEvent(Timestamp receiveTime)
 {
-    LOG_DEBUG("Channel::handleEvent for fd=%d and tie is %d", fd_, (int)tied_);
+    debug("Channel::handleEvent for fd={} and tie is {}", fd_, (int)tied_);
     std::shared_ptr<void> guard;
     if (tied_)
     {
@@ -48,13 +50,13 @@ void Channel::update()
 
 void Channel::handleEventWithGuard(Timestamp receiveTime)
 {
-    LOG_INFO("channel handleEvent revents:%d", revents_);
+    trace("channel handleEvent revents:{}", revents_);
 
     if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN))
     {
         if (closeCallback_)
         {
-            LOG_DEBUG("Channel::handleEventWithGuard for closeCallback");
+            debug("Channel::handleEventWithGuard for closeCallback");
             closeCallback_();
         }
     }
@@ -63,7 +65,7 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
     {
         if (errorCallback_)
         {
-            LOG_DEBUG("Channel::handleEventWithGuard for errorCallback");
+            debug("Channel::handleEventWithGuard for errorCallback");
             errorCallback_();
         }
     }
@@ -84,5 +86,5 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
         }
     }
 
-    LOG_DEBUG("Channel::handleEventLWithGuard end\n");
+    trace("Channel::handleEventLWithGuard end\n");
 }

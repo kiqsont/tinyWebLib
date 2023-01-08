@@ -4,7 +4,7 @@
 #include <condition_variable>
 #include <mutex>
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
     class CountDownLatch
     {

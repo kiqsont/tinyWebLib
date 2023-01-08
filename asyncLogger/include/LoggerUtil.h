@@ -4,7 +4,7 @@
 #include <ctime>
 #include <string>
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
     struct Util
     {

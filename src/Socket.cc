@@ -8,12 +8,14 @@
 #include <netinet/tcp.h>
 #include <cstring>
 
+using namespace asyncLogger;
+
 int Socket::createNoneblockingFD()
 {
     int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, IPPROTO_TCP);
     if (sockfd < 0)
     {
-        LOG_FATAL("%s:%s:%d listen socket create err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
+        fatal("{}:{}:{} listen socket create err:{} \n", __FILE__, __FUNCTION__, __LINE__, errno);
     }
     return sockfd;
 }
@@ -48,7 +50,7 @@ void Socket::bindAddress(const InetAddress &localaddr)
 {
     if (0 != bind(sockfd_, (sockaddr *)localaddr.getSockAddr(), sizeof(sockaddr_in)))
     {
-        LOG_FATAL("bind sockfd:%d fail \n", sockfd_);
+        fatal("bind sockfd:{} fail \n", sockfd_);
     }
 }
 
@@ -56,7 +58,7 @@ void Socket::listen()
 {
     if (0 != ::listen(sockfd_, 1024))
     {
-        LOG_FATAL("listen sockfd:%d fail \n", sockfd_);
+        fatal("listen sockfd:{} fail \n", sockfd_);
     }
 }
 
@@ -66,7 +68,7 @@ int Socket::accept(InetAddress *peeraddr)
     socklen_t len = sizeof addr;
     memset(&addr, 0, sizeof addr);
     int connfd = ::accept4(sockfd_, (sockaddr *)&addr, &len, SOCK_NONBLOCK | SOCK_CLOEXEC);
-    LOG_DEBUG("Socket::accpet sockaddr port:%d", static_cast<int>(ntohs(addr.sin_port)));
+    trace("Socket::accpet sockaddr port:{}", static_cast<int>(ntohs(addr.sin_port)));
     if (connfd >= 0)
     {
         peeraddr->setSockaddr(addr);
@@ -78,7 +80,7 @@ void Socket::shutdownWrite()
 {
     if (::shutdown(sockfd_, SHUT_WR) < 0)
     {
-        LOG_ERROR("Socket::shutdownWrite error");
+        info("Socket::shutdownWrite error");
     }
 }
 

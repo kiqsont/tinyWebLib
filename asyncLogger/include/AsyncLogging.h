@@ -3,7 +3,7 @@
 
 #include "FixedBuffer.hpp"
 #include "CountDownLatch.h"
-#include "noncopyable.h"
+#include "noncopyableLog.h"
 #include <vector>
 #include <mutex>
 #include <atomic>
@@ -11,9 +11,9 @@
 #include <memory>
 #include <condition_variable>
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
-    class AsyncLogging : noncopyable
+    class AsyncLogging : noncopyableLog
     {
     public:
         explicit AsyncLogging(const std::string &basename, off64_t rollSize, int flushInterval = 3);

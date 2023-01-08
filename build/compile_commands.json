@@ -51,11 +51,6 @@
 },
 {
   "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
-  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Logger.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Logger.cc",
-  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Logger.cc"
-},
-{
-  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
   "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Poller.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Poller.cc",
   "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Poller.cc"
 },

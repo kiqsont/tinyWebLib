@@ -1,14 +1,14 @@
 #ifndef ASYNC_LOGGER_FILEAPPENDER
 #define ASYNC_LOGGER_FILEAPPENDER
 
-#include "noncopyable.h"
+#include "noncopyableLog.h"
 #include <cstdio>
 #include <sys/types.h>
 #include <string>
 
-namespace asyncLogger::detail
+namespace asyncLogger::asyncLoggerDetail
 {
-    class FileAppender : noncopyable
+    class FileAppender : noncopyableLog
     {
     public:
         explicit FileAppender(const std::string &filename);

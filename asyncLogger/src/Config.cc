@@ -1,6 +1,6 @@
 #include "Config.h"
 
-using namespace asyncLogger::detail;
+using namespace asyncLogger::asyncLoggerDetail;
 
 Config &Config::instance()
 {

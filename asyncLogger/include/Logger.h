@@ -2,7 +2,7 @@
 #define ASYNC_LOGGER_LOGGER
 
 // for log trace
-//#define LOG_TRACE
+// #define LOG_TRACE
 
 #include <cstdio>
 #include <cstdlib>
@@ -13,7 +13,7 @@
 #include "fmt/ranges.h"
 #include "fmt/color.h"
 
-#include "noncopyable.h"
+#include "noncopyableLog.h"
 #include "Config.h"
 #include "AsyncLogging.h"
 
@@ -68,17 +68,17 @@ namespace asyncLogger
         const char *output_prefix = nullptr;
         const char *output_basedir = nullptr;
         bool is_console = true;
-        detail::callback_t before;
-        detail::callback_t end;
+        asyncLoggerDetail::callback_t before;
+        asyncLoggerDetail::callback_t end;
 
         static void Set(const Config &config);
     };
 
-    namespace detail
+    namespace asyncLoggerDetail
     {
         struct context;
 
-        class Logger : noncopyable
+        class Logger : noncopyableLog
         {
         private:
             Logger();
@@ -106,12 +106,12 @@ namespace asyncLogger
 
         inline void InternalLog(context &ctx)
         {
-            detail::Logger::interval_log(ctx);
+            asyncLoggerDetail::Logger::interval_log(ctx);
         }
 
         inline void DoLog(context &ctx)
         {
-            detail::Logger::getInstance().DoLog(ctx);
+            asyncLoggerDetail::Logger::getInstance().DoLog(ctx);
         }
 
         inline const char *getShortName(const char *filename)
@@ -130,7 +130,7 @@ namespace asyncLogger
         }
     }
 
-#define ASYNC_NAMESPACE asyncLogger::detail::
+#define ASYNC_NAMESPACE asyncLogger::asyncLoggerDetail::
 
 #define INIT_LOG_(level_)         \
     ctx.level = level_;           \
@@ -145,7 +145,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(0)                           \
-        detail::InternalLog(ctx);              \
+        asyncLoggerDetail::InternalLog(ctx);   \
     } while (false)
 #else
 #define trace(format, args...)
@@ -158,7 +158,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(0)                           \
-        detail::DoLog(ctx);                    \
+        asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
 #define debug(format, args...)
@@ -171,7 +171,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(1)                           \
-        detail::DoLog(ctx);                    \
+        asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
 #define info(format, args...)
@@ -184,7 +184,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(2)                           \
-        detail::DoLog(ctx);                    \
+        asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
 #define warn(format, args...)
@@ -197,7 +197,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(3)                           \
-        detail::DoLog(ctx);                    \
+        asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
 #define error(format, args...)
@@ -210,7 +210,7 @@ namespace asyncLogger
         ASYNC_NAMESPACE context ctx;           \
         ctx.text = fmt::format(fmt_, ##args_); \
         INIT_LOG_(4)                           \
-        detail::DoLog(ctx);                    \
+        asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
 #define fatal(format, args...)

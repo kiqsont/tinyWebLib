@@ -89,8 +89,7 @@
 				15,
 				16,
 				17,
-				18,
-				19
+				18
 			]
 		}
 	],
@@ -149,8 +148,7 @@
 				15,
 				16,
 				17,
-				18,
-				19
+				18
 			]
 		}
 	],
@@ -214,12 +212,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/InetAddress.cc",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Logger.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
