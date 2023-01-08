@@ -6,12 +6,30 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10.2"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "example",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "example",
 					"targetIndexes" : 
 					[
 						0
@@ -24,21 +42,30 @@
 				{
 					"directoryIndexes" : 
 					[
-						0
+						0,
+						1
 					],
 					"name" : "tinyWebLib",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
+					"directoryIndex" : 1,
+					"id" : "test.out::@70983d692f648185febe",
+					"jsonFile" : "target-test.out-Release-edc86478386de613ec12.json",
+					"name" : "test.out",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 0,
 					"id" : "tinyWebLib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tinyWebLib-Release-5d79b7a8f4368b249eba.json",
+					"jsonFile" : "target-tinyWebLib-Release-effcb76f6d0d9951f00f.json",
 					"name" : "tinyWebLib",
 					"projectIndex" : 0
 				}

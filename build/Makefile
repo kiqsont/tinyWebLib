@@ -123,6 +123,19 @@ tinyWebLib/fast:
 	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/build
 .PHONY : tinyWebLib/fast
 
+#=============================================================================
+# Target rules for targets named test.out
+
+# Build rule for target.
+test.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test.out
+.PHONY : test.out
+
+# fast build rule for target.
+test.out/fast:
+	$(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/build
+.PHONY : test.out/fast
+
 src/Acceptor.o: src/Acceptor.cc.o
 
 .PHONY : src/Acceptor.o
@@ -645,6 +658,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... tinyWebLib"
+	@echo "... test.out"
 	@echo "... src/Acceptor.o"
 	@echo "... src/Acceptor.i"
 	@echo "... src/Acceptor.s"

@@ -17,7 +17,7 @@ namespace timingWheel
         else
         {
             WeakEntryPtr weakEntryPtr(std::any_cast<WeakEntryPtr>(conn->getContext()));
-            log_debug("ConnectionCallback for timing wheel disconnection: Entry use_count=%d", )
+            log_debug("ConnectionCallback for timing wheel disconnection: Entry use_count={}", weakEntryPtr.use_count());
         }
     }
 

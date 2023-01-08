@@ -1,3 +1,6 @@
 /home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/rebuild_cache.dir
 /home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/edit_cache.dir
 /home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles/tinyWebLib.dir
+/home/kiqsont/program/muduo/tinyWebLib/build/example/CMakeFiles/rebuild_cache.dir
+/home/kiqsont/program/muduo/tinyWebLib/build/example/CMakeFiles/edit_cache.dir
+/home/kiqsont/program/muduo/tinyWebLib/build/example/CMakeFiles/test.out.dir

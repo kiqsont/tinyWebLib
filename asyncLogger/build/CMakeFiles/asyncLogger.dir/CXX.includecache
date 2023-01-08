@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+../dependencies/fmt/include/fmt/chrono.h
+algorithm
+-
+chrono
+-
+cmath
+-
+cstring
+-
+ctime
+-
+iterator
+-
+locale
+-
+ostream
+-
+type_traits
+-
+format.h
+../dependencies/fmt/include/fmt/format.h
+winapifamily.h
+-
+
 ../dependencies/fmt/include/fmt/color.h
 format.h
 ../dependencies/fmt/include/fmt/format.h
@@ -192,6 +216,14 @@ ctime
 string
 -
 
+../include/ProcessInfo.h
+sys/types.h
+-
+unistd.h
+-
+string
+-
+
 ../include/noncopyableLog.h
 
 /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/AsyncLogging.cc
@@ -231,4 +263,18 @@ Logger.h
 /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.h
 iostream
 -
+
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.cc
+Logger.h
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.h
+errno.h
+-
+cstring
+-
+fmt/chrono.h
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/fmt/chrono.h
+LoggerUtil.h
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LoggerUtil.h
+ProcessInfo.h
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/ProcessInfo.h
 

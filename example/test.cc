@@ -20,19 +20,19 @@ namespace EntireProject_for_EchoServer
         {
             connectedFlag = "UP";
         }
-        LOG_INFO("Project_Copy Server - %s -> %s is %s", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), connectedFlag.c_str());
+        log_info("Project_Copy Server - %s -> %s is %s", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), connectedFlag.c_str());
     }
 
     void onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp time)
     {
         std::string msg(buf->retrieveAllAsString());
-        LOG_INFO("%s echo %d bytes,content:%s;in %s", conn->name().c_str(), static_cast<int>(msg.size()), msg.c_str(), time.toString().c_str());
+        log_info("%s echo %d bytes,content:%s;in %s", conn->name().c_str(), static_cast<int>(msg.size()), msg.c_str(), time.toString().c_str());
         conn->send(msg);
     }
 
     void test()
     {
-        LOG_DEBUG("use muduo_copy to build a echo server in DEBUG");
+        log_debug("use muduo_copy to build a echo server in DEBUG");
         EventLoop loop;
         // std::cout << "thread right?" << loop.isInLoopThread() << std::endl;
 
@@ -56,7 +56,7 @@ namespace TimeServer
         {
             connectedFlag = "UP";
         }
-        LOG_INFO("Project_Copy Server - %s -> %s is %s", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), connectedFlag.c_str());
+        log_info("Project_Copy Server - %s -> %s is %s", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), connectedFlag.c_str());
         conn->send(Timestamp::now().toString());
         if (conn->connected())
         {
@@ -67,12 +67,12 @@ namespace TimeServer
     void onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp time)
     {
         std::string msg(buf->retrieveAllAsString());
-        LOG_INFO("discarded %d bytes in %s", static_cast<int>(msg.size()), time.toString().c_str());
+        log_info("discarded %d bytes in %s", static_cast<int>(msg.size()), time.toString().c_str());
     }
 
     void test()
     {
-        LOG_DEBUG("use muduo_copy to build a time server in DEBUG");
+        log_debug("use muduo_copy to build a time server in DEBUG");
         EventLoop loop;
         // std::cout << "thread right?" << loop.isInLoopThread() << std::endl;
 
@@ -92,8 +92,8 @@ namespace LoggerTest
 {
     void test()
     {
-        LOG_INFO("info");
-        LOG_DEBUG("debug");
+        log_info("info");
+        log_debug("debug");
         LOG_ERROR("error");
         std::cout << "flag:";
         int flag;
@@ -107,13 +107,13 @@ namespace LoggerTest
     void test2()
     {
         std::string str = "abcdeft1324234";
-        LOG_INFO("for std::string:%s", str.c_str());
+        log_info("for std::string:%s", str.c_str());
         char buf[32]{0};
         for (int i = 0; i < 5; i++)
         {
             buf[i] = (char)('a' + i);
         }
-        LOG_INFO("char[] buf test:%s%s", buf); // bug
+        log_info("char[] buf test:%s%s", buf); // bug
         std::cout << "--------end-----------" << std::endl;
     }
 }
@@ -159,7 +159,7 @@ namespace SocketTest_for_Echo
     void test()
     {
         InetAddress listenAddr(8888);
-        LOG_INFO("InetAddress test:%s", listenAddr.toIpPort().c_str());
+        log_info("InetAddress test:%s", listenAddr.toIpPort().c_str());
         std::cout << "IP:" << listenAddr.toIp() << " Port:" << listenAddr.toPort() << std::endl;
         Socket sock(createNoneblocking());
         sockaddr_in sockaddr = *listenAddr.getSockAddr();
@@ -179,47 +179,13 @@ namespace SocketTest_for_Echo
             }
             buf[ret] = 0;
             std::string check(buf);
-            LOG_INFO("recv check1:%s", check.c_str());
+            log_info("recv check1:%s", check.c_str());
             if (check.substr(0, 4) == "exit")
                 break;
         }
         ::close(connFd);
     }
 
-}
-
-#include "Buffer.h"
-namespace BufferTest
-{
-    void test()
-    {
-        Buffer buffer;
-        cout << "empty\n";
-        cout << "readableBytes:" << buffer.readableBytes() << endl;
-        cout << "writeableBytes:" << buffer.writeableBytes() << endl;
-        cout << "prependableBytes:" << buffer.prependableBytes() << endl;
-        std::string pureMsg{"here is some pure data in string"};
-        buffer.append(pureMsg.c_str(), pureMsg.size());
-        cout << "-------------------------------\n";
-        cout << "after append\n";
-        cout << "readableBytes:" << buffer.readableBytes() << endl;
-        cout << "writeableBytes:" << buffer.writeableBytes() << endl;
-        cout << "prependableBytes:" << buffer.prependableBytes() << endl;
-        cout << "-------------------------------\n";
-        std::string aGetString(buffer.retrieveAllAsString());
-        cout << "get str:" << aGetString << endl;
-        cout << "after retrieve\n";
-        cout << "readableBytes:" << buffer.readableBytes() << endl;
-        cout << "writeableBytes:" << buffer.writeableBytes() << endl;
-        cout << "prependableBytes:" << buffer.prependableBytes() << endl;
-        cout << "-------------------------------\n";
-        std::string pureMsg2{"xixi"};
-        buffer.append(pureMsg2.c_str(), pureMsg2.size());
-        std::string str2(buffer.peek());
-        cout << str2 << endl;
-        std::string str3(buffer.retrieveAllAsString());
-        cout << str3 << endl;
-    }
 }
 
 namespace EventLoop_EchoServer
@@ -240,7 +206,7 @@ namespace EventLoop_EchoServer
 
     void newConnection(int sockfd, const InetAddress &peerAddr, EventLoop *loop)
     {
-        LOG_INFO("newConnection from [%s]", peerAddr.toIpPort().c_str());
+        log_info("newConnection from [%s]", peerAddr.toIpPort().c_str());
     }
 
     void tryAccept(Socket &listenFd, EventLoop *loop)

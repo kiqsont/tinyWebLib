@@ -66,7 +66,7 @@ namespace asyncLogger
     {
         int print_flag = LstdFlags;
         const char *output_prefix = nullptr;
-        const char *output_basedir = nullptr;
+        const char *output_basedir = "./logFile";
         bool is_console = true;
         asyncLoggerDetail::callback_t before;
         asyncLoggerDetail::callback_t end;

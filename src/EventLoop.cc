@@ -39,10 +39,11 @@ unsigned long EventLoop::get_thread_id()
 EventLoop::EventLoop()
     : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(std::this_thread::get_id()), poller_(Poller::newDefaultPoll(this)), wakeupFd_(createEvent()), wakeupChannel_(new Channel(this, wakeupFd_)), timerQueue_(new TimerQueue(this))
 {
-    log_trace("EventLoop created {} in thread {} \n", this, get_thread_id());
+    // log_trace("EventLoop created {} in thread {} \n", this, get_thread_id());
     if (t_loopInThisThread)
     {
-        log_fatal("Another EventLoop {} exists in this thread {} \n", t_loopInThisThread, get_thread_id());
+        // log_fatal("Another EventLoop {} exists in this thread {} \n", t_loopInThisThread, get_thread_id());
+        log_fatal("Another EventLoop exists in this thread {} \n", get_thread_id());
     }
     else
     {
@@ -78,7 +79,7 @@ void EventLoop::loop()
     looping_.store(true);
     quit_.store(false);
 
-    log_trace("EventLoop {} start looping \n", this);
+    // log_trace("EventLoop {} start looping \n", this);
     while (!quit_.load())
     {
         activeChannels_.clear();
@@ -92,7 +93,7 @@ void EventLoop::loop()
 
         doPendingFunctors(); // callbacks after events
     }
-    log_trace("EventLoop {} stop looping \n", this);
+    // log_trace("EventLoop {} stop looping \n", this);
     looping_.store(false);
 }
 
