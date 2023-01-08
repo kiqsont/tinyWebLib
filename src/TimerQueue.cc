@@ -18,7 +18,7 @@ namespace detail // encapsule timerfd functions
         int timerfd = ::timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK | TFD_CLOEXEC);
         if (timerfd < 0)
         {
-            fatal("Failed in TimerQueue::detail::timerfd_create");
+            log_fatal("Failed in TimerQueue::detail::timerfd_create");
         }
         return timerfd;
     }
@@ -43,7 +43,7 @@ namespace detail // encapsule timerfd functions
         ssize_t n = ::read(timerfd, &num, sizeof num);
         if (n != sizeof num)
         {
-            error("TimerQueue::handleRead() reads");
+            log_error("TimerQueue::handleRead() reads");
         }
     }
 
@@ -55,7 +55,7 @@ namespace detail // encapsule timerfd functions
         int ret = ::timerfd_settime(timerfd, 0, &newValue, &oldValue);
         if (ret)
         {
-            error("TimerQueue::detail::readTimerfd timerfd_settime Err");
+            log_error("TimerQueue::detail::readTimerfd timerfd_settime Err");
         }
     }
 }
@@ -121,12 +121,12 @@ void TimerQueue::cancelInLoop(TimerID timerID)
     auto it = timers_.find(ptr);
     if (it != timers_.end())
     {
-        trace("TimerQueue::cancelInLoop find node in timers_ and erase");
+        log_trace("TimerQueue::cancelInLoop find node in timers_ and erase");
         timers_.erase(it);
     }
     else if (cancelingExpiredTimers_)
     {
-        trace("TimerQueue::cancelInLoop add node to cancelingTimers_");
+        log_trace("TimerQueue::cancelInLoop add node to cancelingTimers_");
         cancelingTimers_.insert(ptr->getSequence());
     }
 }
@@ -135,7 +135,7 @@ void TimerQueue::cancelAllInLoop()
 {
     timers_.clear();
     cancelAllTimers_.store(true);
-    trace("TimerQueue::cancelAllInLoop clear the timers_");
+    log_trace("TimerQueue::cancelAllInLoop clear the timers_");
 }
 
 void TimerQueue::handleRead()
@@ -158,7 +158,7 @@ void TimerQueue::handleRead()
 }
 std::vector<std::unique_ptr<Timer>> TimerQueue::getExpired(Timestamp now)
 {
-    trace("get in TimerQueue::getExpired and time=%s", now.toString().c_str());
+    log_trace("get in TimerQueue::getExpired and time=%s", now.toString().c_str());
     std::vector<std::unique_ptr<Timer>> expireds;
     std::unique_ptr<Timer> tempPtr(new Timer(now, UINT64_MAX));
 

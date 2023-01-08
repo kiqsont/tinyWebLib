@@ -13,7 +13,7 @@ static EventLoop *CheckLoopNotNull(EventLoop *loop)
 {
     if (loop == nullptr)
     {
-        fatal("{}:{}:{}  TcpConnection Loop is null \n", __FILE__, __FUNCTION__, __LINE__);
+        log_fatal("{}:{}:{}  TcpConnection Loop is null \n", __FILE__, __FUNCTION__, __LINE__);
     }
     return loop;
 }
@@ -26,13 +26,13 @@ TcpConnection::TcpConnection(EventLoop *loop, const std::string &nameArg, int so
     channel_->setCloseCallbcak(std::bind(&TcpConnection::handleClose, this));
     channel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
 
-    trace("TcpConnection::ctor[{}] at fd={}\n", name_.c_str(), sockfd);
+    log_trace("TcpConnection::ctor[{}] at fd={}\n", name_.c_str(), sockfd);
     socket_->setKeepAlive(true);
 }
 
 TcpConnection::~TcpConnection()
 {
-    trace("TcpConnection::dtor[{}] at fd={} state={}\n", name_.c_str(), channel_->fd(), static_cast<int>(state_));
+    log_trace("TcpConnection::dtor[{}] at fd={} state={}\n", name_.c_str(), channel_->fd(), static_cast<int>(state_));
 }
 
 void TcpConnection::handleRead(Timestamp receiveTime)
@@ -51,7 +51,7 @@ void TcpConnection::handleRead(Timestamp receiveTime)
     else
     {
         errno = saveErrno;
-        error("TcpConnection::handleRead\n");
+        log_error("TcpConnection::handleRead\n");
         handleError();
     }
 }
@@ -80,17 +80,17 @@ void TcpConnection::handleWrite()
         }
         else
         {
-            error("TcpConnection::handleWrite\n");
+            log_error("TcpConnection::handleWrite\n");
         }
     }
     else
     {
-        error("TcpConnection fd ={} id down,no more writing\n", channel_->fd());
+        log_error("TcpConnection fd ={} id down,no more writing\n", channel_->fd());
     }
 }
 void TcpConnection::handleClose()
 {
-    trace("TcpConnection::handleClose fd={} state={} \n", channel_->fd(), static_cast<int>(state_.load()));
+    log_trace("TcpConnection::handleClose fd={} state={} \n", channel_->fd(), static_cast<int>(state_.load()));
     setState(StateE::kDisconnected);
     channel_->disableAll();
 
@@ -112,7 +112,7 @@ void TcpConnection::handleError()
     {
         err = optval;
     }
-    error("TcpConnection::handleErrno name:{} - SO_ERROR:{} \n", name_.c_str(), err);
+    log_error("TcpConnection::handleErrno name:{} - SO_ERROR:{} \n", name_.c_str(), err);
 }
 
 void TcpConnection::send(const std::string &msg)
@@ -154,7 +154,7 @@ void TcpConnection::sendInLoop(const void *message, size_t len)
 
     if (state_ == kDisconnected)
     {
-        error("disconnected, give up writing\n");
+        log_error("disconnected, give up writing\n");
         return;
     }
 
@@ -177,7 +177,7 @@ void TcpConnection::sendInLoop(const void *message, size_t len)
             nwrote = 0;
             if (errno != EWOULDBLOCK)
             {
-                error("TcpConnection::sendInLoop\n");
+                log_error("TcpConnection::sendInLoop\n");
                 if (errno == EPIPE || errno == ECONNRESET) // SIGPIPE RESET
                 {
                     faultError = true;
@@ -258,7 +258,7 @@ void TcpConnection::foreCloseInLoop()
 void TcpConnection::muduoDefaultConnectionCallback(const TcpConnectionPtr &conn)
 {
     const char *flag = conn->connected() ? "UP" : "DOWN";
-    info("{} -> {} is {}", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), flag);
+    log_info("{} -> {} is {}", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), flag);
 }
 
 void TcpConnection::muduoDefaultMessageCallback(const TcpConnectionPtr &conn, Buffer *buf, Timestamp)

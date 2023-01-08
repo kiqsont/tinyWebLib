@@ -11,7 +11,7 @@ sockaddr_in InetAddress::getLocalAddr(int sockfd)
     socklen_t addrlen = sizeof localaddr;
     if (::getsockname(sockfd, (sockaddr *)&localaddr, &addrlen))
     {
-        error("Socket::getLocalAddr");
+        log_error("Socket::getLocalAddr");
     }
     return localaddr;
 }
@@ -22,7 +22,7 @@ sockaddr_in InetAddress::getPeerAddr(int sockfd)
     socklen_t addrlen = sizeof peeraddr;
     if (::getpeername(sockfd, (sockaddr *)&peeraddr, &addrlen))
     {
-        error("Socket::getLocalAddr");
+        log_error("Socket::getLocalAddr");
     }
     return peeraddr;
 }

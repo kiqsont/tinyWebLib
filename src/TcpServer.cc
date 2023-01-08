@@ -10,7 +10,7 @@ static EventLoop *CheckLoopNotNull(EventLoop *loop)
 {
     if (loop == nullptr)
     {
-        fatal("{}:{}:{}  mainLoop is null \n", __FILE__, __FUNCTION__, __LINE__);
+        log_fatal("{}:{}:{}  mainLoop is null \n", __FILE__, __FUNCTION__, __LINE__);
     }
     return loop;
 }
@@ -49,14 +49,14 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     ++nextConnId_;
     std::string connName = name_ + buf;
 
-    trace("TcpServer::newConnection [{}] - new connection [{}] from {} \n", name_.c_str(), connName.c_str(), peerAddr.toIpPort().c_str());
+    log_trace("TcpServer::newConnection [{}] - new connection [{}] from {} \n", name_.c_str(), connName.c_str(), peerAddr.toIpPort().c_str());
 
     sockaddr_in local;
     memset(&local, 0, sizeof local);
     socklen_t addrLen = sizeof local;
     if (::getsockname(sockfd, (sockaddr *)&local, &addrLen) < 0)
     {
-        error("sockets::getLoaclAddr\n");
+        log_error("sockets::getLoaclAddr\n");
     }
     InetAddress localAddr(local);
 
@@ -97,7 +97,7 @@ void TcpServer::removeConnection(const TcpConnectionPtr &conn)
 
 void TcpServer::removeConnectionInLoop(const TcpConnectionPtr &conn)
 {
-    trace("TcpServer::removeConnectionInLoop [{}] - connection {}\n", name_.c_str(), conn->name().c_str());
+    log_trace("TcpServer::removeConnectionInLoop [{}] - connection {}\n", name_.c_str(), conn->name().c_str());
     connections_.erase(conn->name());
     EventLoop *ioLoop = conn->getLoop();
     ioLoop->queueInLoop(std::bind(&TcpConnection::connectDestoryed, conn));
@@ -134,7 +134,7 @@ void TcpServer::setMaxConnectionTime(int maxTime)
 {
     if (started_ != 0)
     {
-        trace("TcpServer::setMaxConnectionTime Failed, server has started");
+        log_trace("TcpServer::setMaxConnectionTime Failed, server has started");
         return;
     }
     enableTimingWheel_.store(true);

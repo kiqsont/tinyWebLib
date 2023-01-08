@@ -19,7 +19,7 @@ EPollPoller::EPollPoller(EventLoop *loop)
 {
     if (epollfd_ < 0)
     {
-        fatal("epoll_create error:{} \n", errno);
+        log_fatal("epoll_create error:{} \n", errno);
     }
 }
 
@@ -30,14 +30,14 @@ EPollPoller::~EPollPoller()
 
 Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
 {
-    trace("func={} => fd total count:{}\n", __FUNCTION__, channels_.size()); // change LOG_INFO to LOG_DEBUG
+    log_trace("func={} => fd total count:{}\n", __FUNCTION__, channels_.size()); // change LOG_INFO to LOG_DEBUG
     int numEvents = ::epoll_wait(epollfd_, events_.data(), static_cast<int>(events_.size()), timeoutMs);
     int saveErrno = errno;
     Timestamp now(Timestamp::now());
 
     if (numEvents > 0)
     {
-        trace("{} events happened", numEvents);
+        log_trace("{} events happened", numEvents);
         fillActiveChannels(numEvents, activeChannels);
         if (static_cast<size_t>(numEvents) == events_.size())
         {
@@ -46,14 +46,14 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
     }
     else if (numEvents == 0)
     {
-        trace("{} timeout \n", __FUNCTION__);
+        log_trace("{} timeout \n", __FUNCTION__);
     }
     else
     {
         if (saveErrno != EINTR)
         {
             errno = saveErrno;
-            error("EPollPoller::poll() err\n");
+            log_error("EPollPoller::poll() err\n");
         }
     }
     return now;
@@ -62,7 +62,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
 void EPollPoller::updateChannel(Channel *channel)
 {
     const int index = channel->index();
-    trace("EPollPoller::updateChannel fd={} events={} index={}", channel->fd(), channel->events(), index);
+    log_trace("EPollPoller::updateChannel fd={} events={} index={}", channel->fd(), channel->events(), index);
     if (index == kNew || index == kDeleted)
     {
         if (index == kNew)
@@ -93,7 +93,7 @@ void EPollPoller::updateChannel(Channel *channel)
 
 void EPollPoller::removeChannel(Channel *channel)
 {
-    trace("func={},fd={} \n", __FUNCTION__, channel->fd());
+    log_trace("func={},fd={} \n", __FUNCTION__, channel->fd());
     int fd = channel->fd();
     channels_.erase(fd);
 
@@ -107,7 +107,7 @@ void EPollPoller::removeChannel(Channel *channel)
 
 void EPollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels) const
 {
-    trace("poll::epoll_wait => EPollPoller::fillActiveChannels");
+    log_trace("poll::epoll_wait => EPollPoller::fillActiveChannels");
     for (int i = 0; i < numEvents; i++)
     {
         Channel *channel = static_cast<Channel *>(events_[i].data.ptr);
@@ -129,11 +129,11 @@ void EPollPoller::update(int operation, Channel *channel)
     {
         if (operation == EPOLL_CTL_DEL)
         {
-            error("epoll_ctl del error:{} \n", errno);
+            log_error("epoll_ctl del error:{} \n", errno);
         }
         else
         {
-            fatal("epoll_ctl add/mod error:{} \n", errno);
+            log_fatal("epoll_ctl add/mod error:{} \n", errno);
         }
     }
 }

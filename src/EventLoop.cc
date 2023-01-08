@@ -24,7 +24,7 @@ static int createEvent()
     int evtfd = ::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
     if (evtfd < 0)
     {
-        fatal("eventfd error:{} \n", errno);
+        log_fatal("eventfd error:{} \n", errno);
     }
     return evtfd;
 }
@@ -39,10 +39,10 @@ unsigned long EventLoop::get_thread_id()
 EventLoop::EventLoop()
     : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(std::this_thread::get_id()), poller_(Poller::newDefaultPoll(this)), wakeupFd_(createEvent()), wakeupChannel_(new Channel(this, wakeupFd_)), timerQueue_(new TimerQueue(this))
 {
-    trace("EventLoop created {} in thread {} \n", this, get_thread_id());
+    log_trace("EventLoop created {} in thread {} \n", this, get_thread_id());
     if (t_loopInThisThread)
     {
-        fatal("Another EventLoop {} exists in this thread {} \n", t_loopInThisThread, get_thread_id());
+        log_fatal("Another EventLoop {} exists in this thread {} \n", t_loopInThisThread, get_thread_id());
     }
     else
     {
@@ -52,7 +52,7 @@ EventLoop::EventLoop()
     // set wakeup's events and callback
     wakeupChannel_->setReadCallback(std::bind(&EventLoop::handleRead, this));
     wakeupChannel_->enableReading(); // every eventloop and listen the EPOLLIN for wakeupChannel
-    trace("EventLoop ctor end");
+    log_trace("EventLoop ctor end");
 }
 
 EventLoop::~EventLoop()
@@ -69,7 +69,7 @@ void EventLoop::handleRead()
     ssize_t n = read(wakeupFd_, &one, sizeof one);
     if (n != sizeof one)
     {
-        error("EventLoop::handleRead() reads {} bytes instead of 8", n);
+        log_error("EventLoop::handleRead() reads {} bytes instead of 8", n);
     }
 }
 
@@ -78,7 +78,7 @@ void EventLoop::loop()
     looping_.store(true);
     quit_.store(false);
 
-    trace("EventLoop {} start looping \n", this);
+    log_trace("EventLoop {} start looping \n", this);
     while (!quit_.load())
     {
         activeChannels_.clear();
@@ -86,13 +86,13 @@ void EventLoop::loop()
 
         for (Channel *channel : activeChannels_)
         {
-            trace("EventLoop::loop get in channelHandle fd={}", channel->fd());
+            log_trace("EventLoop::loop get in channelHandle fd={}", channel->fd());
             channel->handleEvent(pollReturnTime_);
         }
 
         doPendingFunctors(); // callbacks after events
     }
-    trace("EventLoop {} stop looping \n", this);
+    log_trace("EventLoop {} stop looping \n", this);
     looping_.store(false);
 }
 
@@ -109,7 +109,7 @@ void EventLoop::quit()
 void EventLoop::runInLoop(Functor cb)
 {
     int inThread = isInLoopThread();
-    trace("EventLoop::runInLoop in loopThread:{}", inThread);
+    log_trace("EventLoop::runInLoop in loopThread:{}", inThread);
     if (isInLoopThread())
     {
         cb();
@@ -170,7 +170,7 @@ void EventLoop::wakeup()
     ssize_t n = write(wakeupFd_, &one, sizeof one);
     if (n != sizeof one)
     {
-        error("EventLoop::wakeup() writes {} bytes instand of 8 \n", n);
+        log_error("EventLoop::wakeup() writes {} bytes instand of 8 \n", n);
     }
 }
 
@@ -192,7 +192,7 @@ bool EventLoop::hasChannel(Channel *channel)
 void EventLoop::doPendingFunctors()
 {
 
-    trace("EventLoop::doPendingFunctors callback");
+    log_trace("EventLoop::doPendingFunctors callback");
 
     std::vector<Functor> functors;
     callingPendingFunctors_.store(true);

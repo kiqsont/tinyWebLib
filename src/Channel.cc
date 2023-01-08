@@ -14,7 +14,7 @@ Channel::~Channel(){}
 */
 void Channel::handleEvent(Timestamp receiveTime)
 {
-    debug("Channel::handleEvent for fd={} and tie is {}", fd_, (int)tied_);
+    log_debug("Channel::handleEvent for fd={} and tie is {}", fd_, (int)tied_);
     std::shared_ptr<void> guard;
     if (tied_)
     {
@@ -50,13 +50,13 @@ void Channel::update()
 
 void Channel::handleEventWithGuard(Timestamp receiveTime)
 {
-    trace("channel handleEvent revents:{}", revents_);
+    log_trace("channel handleEvent revents:{}", revents_);
 
     if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN))
     {
         if (closeCallback_)
         {
-            debug("Channel::handleEventWithGuard for closeCallback");
+            log_debug("Channel::handleEventWithGuard for closeCallback");
             closeCallback_();
         }
     }
@@ -65,7 +65,7 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
     {
         if (errorCallback_)
         {
-            debug("Channel::handleEventWithGuard for errorCallback");
+            log_debug("Channel::handleEventWithGuard for errorCallback");
             errorCallback_();
         }
     }
@@ -86,5 +86,5 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
         }
     }
 
-    trace("Channel::handleEventLWithGuard end\n");
+    log_trace("Channel::handleEventLWithGuard end\n");
 }

@@ -5,11 +5,13 @@
 #include "Socket.h"
 #include "Logger.h"
 
+using namespace asyncLogger;
+
 static EventLoop *CheckLoopNotNull(EventLoop *loop)
 {
     if (loop == nullptr)
     {
-        asyncLogger::fatal("{}:{}:{}  TcpConnection Loop is null \n", __FILE__, __FUNCTION__, __LINE__);
+        log_fatal("{}:{}:{}  TcpConnection Loop is null \n", __FILE__, __FUNCTION__, __LINE__);
     }
     return loop;
 }
@@ -106,7 +108,7 @@ void TcpClient::removeConnection(const TcpConnectionPtr &conn)
     loop_->queueInLoop(std::bind(&TcpConnection::connectDestoryed, conn));
     if (retry_.load() && connect_.load())
     {
-        asyncLogger::trace("TcpClient::connect[%s] - Reconnecting to [%s]", name_.c_str(), connector_->serverAddress().toIpPort().c_str());
+        log_trace("TcpClient::connect[%s] - Reconnecting to [%s]", name_.c_str(), connector_->serverAddress().toIpPort().c_str());
         connector_->restart();
     }
 }
