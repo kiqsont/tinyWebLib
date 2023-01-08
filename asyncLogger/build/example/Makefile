@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kiqsont/program/logger/asyncLogger
+CMAKE_SOURCE_DIR = /home/kiqsont/program/muduo/tinyWebLib/asyncLogger
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kiqsont/program/logger/asyncLogger/build
+CMAKE_BINARY_DIR = /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/logger/asyncLogger/build/CMakeFiles /home/kiqsont/program/logger/asyncLogger/build/example/CMakeFiles/progress.marks
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/logger/asyncLogger/build/CMakeFiles 0
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/example/CMakeFiles/progress.marks
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/CMakeFiles/test.out.dir/rule:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/test.out.dir/rule
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/test.out.dir/rule
 .PHONY : example/CMakeFiles/test.out.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ test.out: example/CMakeFiles/test.out.dir/rule
 
 # fast build rule for target.
 test.out/fast:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/build
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/build
 .PHONY : test.out/fast
 
 test.o: test.cc.o
@@ -131,7 +131,7 @@ test.o: test.cc.o
 
 # target to build an object file
 test.cc.o:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.o
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.o
 .PHONY : test.cc.o
 
 test.i: test.cc.i
@@ -140,7 +140,7 @@ test.i: test.cc.i
 
 # target to preprocess a source file
 test.cc.i:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.i
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.i
 .PHONY : test.cc.i
 
 test.s: test.cc.s
@@ -149,7 +149,7 @@ test.s: test.cc.s
 
 # target to generate assembly for a file
 test.cc.s:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.s
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/test.cc.s
 .PHONY : test.cc.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

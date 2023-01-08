@@ -1,4 +1,4 @@
-# Install script for directory: /home/kiqsont/program/logger/asyncLogger/example
+# Install script for directory: /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

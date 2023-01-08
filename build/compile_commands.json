@@ -1,0 +1,102 @@
+[
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Acceptor.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Acceptor.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Buffer.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Buffer.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Buffer.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Channel.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Channel.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Channel.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Connector.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Connector.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Connector.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/DefaultPoller.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/DefaultPoller.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/DefaultPoller.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/EPollPoller.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/EPollPoller.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/EventLoop.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/EventLoop.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/EventLoopThread.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThread.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThread.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/EventLoopThreadPool.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThreadPool.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/EventLoopThreadPool.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/InetAddress.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/InetAddress.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Logger.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Logger.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Logger.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Poller.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Poller.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Poller.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Socket.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Socket.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Socket.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/TcpClient.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TcpClient.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/TcpConnection.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TcpConnection.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/TcpServer.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TcpServer.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Thread.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Thread.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Thread.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/TimerQueue.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TimerQueue.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/Timestamp.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/Timestamp.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/Timestamp.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build",
+  "command": "/usr/bin/g++  -DtinyWebLib_EXPORTS -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include  -O2 -fPIC   -o CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/src/TimingWheel.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TimingWheel.cc"
+}
+]

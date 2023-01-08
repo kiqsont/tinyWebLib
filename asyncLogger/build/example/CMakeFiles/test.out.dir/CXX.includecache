@@ -164,15 +164,15 @@ AsyncLogging.h
 
 ../include/noncopyable.h
 
-/home/kiqsont/program/logger/asyncLogger/dependencies/Timer.hpp
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/dependencies/Timer.hpp
 chrono
 -
 iostream
 -
 
-/home/kiqsont/program/logger/asyncLogger/example/test.cc
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/example/test.cc
 Logger.h
-/home/kiqsont/program/logger/asyncLogger/example/Logger.h
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/example/Logger.h
 ../dependencies/Timer.hpp
-/home/kiqsont/program/logger/asyncLogger/dependencies/Timer.hpp
+/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/dependencies/Timer.hpp
 

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kiqsont/program/logger/asyncLogger/dependencies/fmt/src/format.cc" "/home/kiqsont/program/logger/asyncLogger/build/dependencies/fmt/CMakeFiles/fmt.dir/src/format.cc.o"
-  "/home/kiqsont/program/logger/asyncLogger/dependencies/fmt/src/os.cc" "/home/kiqsont/program/logger/asyncLogger/build/dependencies/fmt/CMakeFiles/fmt.dir/src/os.cc.o"
+  "/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/dependencies/fmt/src/format.cc" "/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/dependencies/fmt/CMakeFiles/fmt.dir/src/format.cc.o"
+  "/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/dependencies/fmt/src/os.cc" "/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/dependencies/fmt/CMakeFiles/fmt.dir/src/os.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

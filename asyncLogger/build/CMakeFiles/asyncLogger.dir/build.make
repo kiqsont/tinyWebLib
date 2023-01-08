@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kiqsont/program/logger/asyncLogger
+CMAKE_SOURCE_DIR = /home/kiqsont/program/muduo/tinyWebLib/asyncLogger
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kiqsont/program/logger/asyncLogger/build
+CMAKE_BINARY_DIR = /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/asyncLogger.dir/depend.make
@@ -59,107 +59,107 @@ include CMakeFiles/asyncLogger.dir/flags.make
 
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o: ../src/AsyncLogging.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/AsyncLogging.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/AsyncLogging.cc
 
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/AsyncLogging.cc > CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/AsyncLogging.cc > CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.i
 
 CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/AsyncLogging.cc -o CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/AsyncLogging.cc -o CMakeFiles/asyncLogger.dir/src/AsyncLogging.cc.s
 
 CMakeFiles/asyncLogger.dir/src/Config.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/Config.cc.o: ../src/Config.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/asyncLogger.dir/src/Config.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/Config.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/Config.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/asyncLogger.dir/src/Config.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/Config.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Config.cc
 
 CMakeFiles/asyncLogger.dir/src/Config.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/Config.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/Config.cc > CMakeFiles/asyncLogger.dir/src/Config.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Config.cc > CMakeFiles/asyncLogger.dir/src/Config.cc.i
 
 CMakeFiles/asyncLogger.dir/src/Config.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/Config.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/Config.cc -o CMakeFiles/asyncLogger.dir/src/Config.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Config.cc -o CMakeFiles/asyncLogger.dir/src/Config.cc.s
 
 CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o: ../src/CountDownLatch.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/CountDownLatch.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/CountDownLatch.cc
 
 CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/CountDownLatch.cc > CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/CountDownLatch.cc > CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.i
 
 CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/CountDownLatch.cc -o CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/CountDownLatch.cc -o CMakeFiles/asyncLogger.dir/src/CountDownLatch.cc.s
 
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o: ../src/FileAppender.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/FileAppender.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/FileAppender.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/FileAppender.cc
 
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/FileAppender.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/FileAppender.cc > CMakeFiles/asyncLogger.dir/src/FileAppender.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/FileAppender.cc > CMakeFiles/asyncLogger.dir/src/FileAppender.cc.i
 
 CMakeFiles/asyncLogger.dir/src/FileAppender.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/FileAppender.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/FileAppender.cc -o CMakeFiles/asyncLogger.dir/src/FileAppender.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/FileAppender.cc -o CMakeFiles/asyncLogger.dir/src/FileAppender.cc.s
 
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.o: ../src/LogFile.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/asyncLogger.dir/src/LogFile.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/LogFile.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/LogFile.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/asyncLogger.dir/src/LogFile.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/LogFile.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LogFile.cc
 
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/LogFile.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/LogFile.cc > CMakeFiles/asyncLogger.dir/src/LogFile.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LogFile.cc > CMakeFiles/asyncLogger.dir/src/LogFile.cc.i
 
 CMakeFiles/asyncLogger.dir/src/LogFile.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/LogFile.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/LogFile.cc -o CMakeFiles/asyncLogger.dir/src/LogFile.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LogFile.cc -o CMakeFiles/asyncLogger.dir/src/LogFile.cc.s
 
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/Logger.cc.o: ../src/Logger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/asyncLogger.dir/src/Logger.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/Logger.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/Logger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/asyncLogger.dir/src/Logger.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/Logger.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.cc
 
 CMakeFiles/asyncLogger.dir/src/Logger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/Logger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/Logger.cc > CMakeFiles/asyncLogger.dir/src/Logger.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.cc > CMakeFiles/asyncLogger.dir/src/Logger.cc.i
 
 CMakeFiles/asyncLogger.dir/src/Logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/Logger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/Logger.cc -o CMakeFiles/asyncLogger.dir/src/Logger.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/Logger.cc -o CMakeFiles/asyncLogger.dir/src/Logger.cc.s
 
 CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o: ../src/LoggerUtil.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/LoggerUtil.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LoggerUtil.cc
 
 CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/LoggerUtil.cc > CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LoggerUtil.cc > CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.i
 
 CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/LoggerUtil.cc -o CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/LoggerUtil.cc -o CMakeFiles/asyncLogger.dir/src/LoggerUtil.cc.s
 
 CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o: CMakeFiles/asyncLogger.dir/flags.make
 CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o: ../src/ProcessInfo.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o -c /home/kiqsont/program/logger/asyncLogger/src/ProcessInfo.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/ProcessInfo.cc
 
 CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/logger/asyncLogger/src/ProcessInfo.cc > CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/ProcessInfo.cc > CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.i
 
 CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/logger/asyncLogger/src/ProcessInfo.cc -o CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/src/ProcessInfo.cc -o CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.s
 
 # Object files for target asyncLogger
 asyncLogger_OBJECTS = \
@@ -185,7 +185,7 @@ asyncLogger_EXTERNAL_OBJECTS =
 ../lib/libasyncLogger.so: CMakeFiles/asyncLogger.dir/src/ProcessInfo.cc.o
 ../lib/libasyncLogger.so: CMakeFiles/asyncLogger.dir/build.make
 ../lib/libasyncLogger.so: CMakeFiles/asyncLogger.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kiqsont/program/logger/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../lib/libasyncLogger.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../lib/libasyncLogger.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/asyncLogger.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/asyncLogger.dir/clean:
 .PHONY : CMakeFiles/asyncLogger.dir/clean
 
 CMakeFiles/asyncLogger.dir/depend:
-	cd /home/kiqsont/program/logger/asyncLogger/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kiqsont/program/logger/asyncLogger /home/kiqsont/program/logger/asyncLogger /home/kiqsont/program/logger/asyncLogger/build /home/kiqsont/program/logger/asyncLogger/build /home/kiqsont/program/logger/asyncLogger/build/CMakeFiles/asyncLogger.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kiqsont/program/muduo/tinyWebLib/asyncLogger /home/kiqsont/program/muduo/tinyWebLib/asyncLogger /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build /home/kiqsont/program/muduo/tinyWebLib/asyncLogger/build/CMakeFiles/asyncLogger.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/asyncLogger.dir/depend
 
