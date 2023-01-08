@@ -1,4 +1,7 @@
 #include "TimingWheel.h"
+#include "Logger.h"
+
+using namespace asyncLogger;
 
 namespace timingWheel
 {
@@ -14,7 +17,7 @@ namespace timingWheel
         else
         {
             WeakEntryPtr weakEntryPtr(std::any_cast<WeakEntryPtr>(conn->getContext()));
-            LOG_DEBUG("ConnectionCallback for timing wheel disconnection: Entry use_count=%d", )
+            debug("ConnectionCallback for timing wheel disconnection: Entry use_count=%d", )
         }
     }
 

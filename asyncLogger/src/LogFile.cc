@@ -53,7 +53,7 @@ void LogFile::rollFile(const time_t *now)
 
     if (temp_now > m_lastRoll)
     {
-        trace("Begin to roll to filename:{}", filename);
+        log_trace("Begin to roll to filename:{}", filename);
 
         m_lastRoll = temp_now;
         m_lastFlush = temp_now;
@@ -67,7 +67,7 @@ void LogFile::append_unlocked(const char *message, size_t len)
     m_file->append(message, len);
     if (m_file->writtenBytes() > m_rollSize)
     {
-        trace("Log file hasn't space to write{:d},begin to build a new log file", m_rollSize / 1024);
+        log_trace("Log file hasn't space to write{:d},begin to build a new log file", m_rollSize / 1024);
         rollFile();
         m_file->resetWritten();
     }
@@ -76,7 +76,7 @@ void LogFile::append_unlocked(const char *message, size_t len)
         ++m_count;
         if (m_count >= m_checkEveryN)
         {
-            trace("Begin to check flushInterval and curPeriod");
+            log_trace("Begin to check flushInterval and curPeriod");
             m_count = 0;
             time_t now = ::time(nullptr);
             time_t curPeriod = now / kRollPerSeconds * kRollPerSeconds;

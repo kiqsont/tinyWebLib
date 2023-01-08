@@ -9,6 +9,8 @@
 using std::cout;
 using std::endl;
 
+using namespace asyncLogger;
+
 namespace EntireProject_for_EchoServer
 {
     void onConnection(const TcpConnectionPtr &conn)

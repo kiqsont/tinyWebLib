@@ -139,7 +139,7 @@ namespace asyncLogger
     ctx.short_filename = ASYNC_NAMESPACE getShortName(__FILE__);
 
 #ifdef TRACE_
-#define trace(fmt_, args_...)                  \
+#define log_trace(fmt_, args_...)              \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -148,11 +148,11 @@ namespace asyncLogger
         asyncLoggerDetail::InternalLog(ctx);   \
     } while (false)
 #else
-#define trace(format, args...)
+#define log_trace(format, args...)
 #endif
 
 #ifdef DEBUG_
-#define debug(fmt_, args_...)                  \
+#define log_debug(fmt_, args_...)              \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -161,11 +161,11 @@ namespace asyncLogger
         asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
-#define debug(format, args...)
+#define log_debug(format, args...)
 #endif
 
 #ifdef INFO_
-#define info(fmt_, args_...)                   \
+#define log_info(fmt_, args_...)               \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -174,11 +174,11 @@ namespace asyncLogger
         asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
-#define info(format, args...)
+#define log_info(format, args...)
 #endif
 
 #ifdef WARN_
-#define warn(fmt_, args_...)                   \
+#define log_warn(fmt_, args_...)               \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -187,11 +187,11 @@ namespace asyncLogger
         asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
-#define warn(format, args...)
+#define log_warn(format, args...)
 #endif
 
 #ifdef ERROR_
-#define error(fmt_, args_...)                  \
+#define log_error(fmt_, args_...)              \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -200,11 +200,11 @@ namespace asyncLogger
         asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
-#define error(format, args...)
+#define log_error(format, args...)
 #endif
 
 #ifdef FATAL_
-#define fatal(fmt_, args_...)                  \
+#define log_fatal(fmt_, args_...)              \
     do                                         \
     {                                          \
         ASYNC_NAMESPACE context ctx;           \
@@ -213,7 +213,7 @@ namespace asyncLogger
         asyncLoggerDetail::DoLog(ctx);         \
     } while (false)
 #else
-#define fatal(format, args...)
+#define log_fatal(format, args...)
 #endif
 }
 #endif // ASYNC_LOGGER_LOGGER

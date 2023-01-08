@@ -16,14 +16,14 @@ void FileAppender::init(const std::string &filename)
     size_t pos;
     if ((pos = filename.rfind('/')) == std::string::npos)
     {
-        trace("Invalid Dir Path{}", filename);
+        log_trace("Invalid Dir Path{}", filename);
         throw std::runtime_error("invalid filepath");
     }
 
     fileDir = filename.substr(0, pos + 1);
     if (access(fileDir.c_str(), F_OK) == -1)
     {
-        trace("File Path doesn't Exist");
+        log_trace("File Path doesn't Exist");
         throw std::runtime_error(fmt::format("file dir not exist!{}", fileDir));
     }
 
@@ -32,7 +32,7 @@ void FileAppender::init(const std::string &filename)
     {
         int err = ferror(m_file);
         auto *errorInfo = Util::getErrorInfo(err);
-        trace("FileAppender init Failed for err:{}", errorInfo);
+        log_trace("FileAppender init Failed for err:{}", errorInfo);
         fprintf(stderr, "FileAppender error in open file:%s errno:%s", filename.c_str(), errorInfo);
         return;
     }
@@ -59,7 +59,7 @@ void FileAppender::append(const char *message, size_t len)
             int err = ferror(m_file);
             if (err)
             {
-                trace("FileAppender::append tried to write data but failed,err:{}", Util::getErrorInfo(err));
+                log_trace("FileAppender::append tried to write data but failed,err:{}", Util::getErrorInfo(err));
                 fprintf(stderr, "AppendFile::append() failed to write err:%s", Util::getErrorInfo(err));
                 break;
             }
@@ -77,7 +77,7 @@ void FileAppender::flush()
 {
     if (m_file)
     {
-        trace("FileAppender::flush used ::fflush");
+        log_trace("FileAppender::flush used ::fflush");
         ::fflush(m_file);
     }
 }
@@ -87,7 +87,7 @@ size_t FileAppender::write(const char *message, size_t len)
     size_t sz = 0;
     if (m_file)
     {
-        trace("FileAppender::write fwrite");
+        log_trace("FileAppender::write fwrite");
         sz = fwrite_unlocked(message, 1, len, m_file);
     }
     return sz;

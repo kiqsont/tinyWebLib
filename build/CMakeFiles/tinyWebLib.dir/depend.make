@@ -6,6 +6,7 @@ CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../include/Acceptor.h
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/Acceptor.cc.o: ../include/InetAddress.h
@@ -23,6 +24,7 @@ CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/Channel.cc.o: ../include/EventLoop.h
@@ -36,6 +38,7 @@ CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/Connector.cc.o: ../include/Connector.h
@@ -57,11 +60,12 @@ CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/Logger.h
-CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/noncopyable.h
+CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../include/EPollPoller.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../include/Poller.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../include/Timestamp.h
+CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../include/noncopyable.h
 CMakeFiles/tinyWebLib.dir/src/EPollPoller.cc.o: ../src/EPollPoller.cc
 
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/AsyncLogging.h
@@ -69,6 +73,7 @@ CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/EventLoop.cc.o: ../include/EventLoop.h
@@ -99,7 +104,7 @@ CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/Logger.h
-CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/noncopyable.h
+CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../include/InetAddress.h
 CMakeFiles/tinyWebLib.dir/src/InetAddress.cc.o: ../src/InetAddress.cc
 
@@ -114,6 +119,7 @@ CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../include/InetAddress.h
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../include/Socket.h
 CMakeFiles/tinyWebLib.dir/src/Socket.cc.o: ../include/noncopyable.h
@@ -124,6 +130,7 @@ CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../include/Buffer.h
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/TcpClient.cc.o: ../include/Connector.h
@@ -142,6 +149,7 @@ CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../asyncLogger/include/Config.
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../include/Buffer.h
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/TcpConnection.cc.o: ../include/Channel.h
@@ -159,6 +167,7 @@ CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../include/Acceptor.h
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../include/Buffer.h
 CMakeFiles/tinyWebLib.dir/src/TcpServer.cc.o: ../include/Callbacks.h
@@ -186,6 +195,7 @@ CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../include/Channel.h
 CMakeFiles/tinyWebLib.dir/src/TimerQueue.cc.o: ../include/EventLoop.h
@@ -203,6 +213,7 @@ CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../asyncLogger/include/Config.h
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../asyncLogger/include/CountDownLatch.h
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../asyncLogger/include/FixedBuffer.hpp
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../asyncLogger/include/Logger.h
+CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../asyncLogger/include/noncopyableLog.h
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../include/Buffer.h
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../include/Callbacks.h
 CMakeFiles/tinyWebLib.dir/src/TimingWheel.cc.o: ../include/InetAddress.h

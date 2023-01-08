@@ -9,6 +9,8 @@
 #include "Logger.h"
 #include "EventLoop.h"
 
+using namespace asyncLogger;
+
 namespace detail // encapsule timerfd functions
 {
     int createTimerfd()
@@ -41,7 +43,7 @@ namespace detail // encapsule timerfd functions
         ssize_t n = ::read(timerfd, &num, sizeof num);
         if (n != sizeof num)
         {
-            LOG_ERROR("TimerQueue::handleRead() reads");
+            error("TimerQueue::handleRead() reads");
         }
     }
 
@@ -53,7 +55,7 @@ namespace detail // encapsule timerfd functions
         int ret = ::timerfd_settime(timerfd, 0, &newValue, &oldValue);
         if (ret)
         {
-            LOG_ERROR("TimerQueue::detail::readTimerfd timerfd_settime Err");
+            error("TimerQueue::detail::readTimerfd timerfd_settime Err");
         }
     }
 }
@@ -119,12 +121,12 @@ void TimerQueue::cancelInLoop(TimerID timerID)
     auto it = timers_.find(ptr);
     if (it != timers_.end())
     {
-        LOG_DEBUG("TimerQueue::cancelInLoop find node in timers_ and erase");
+        trace("TimerQueue::cancelInLoop find node in timers_ and erase");
         timers_.erase(it);
     }
     else if (cancelingExpiredTimers_)
     {
-        LOG_DEBUG("TimerQueue::cancelInLoop add node to cancelingTimers_");
+        trace("TimerQueue::cancelInLoop add node to cancelingTimers_");
         cancelingTimers_.insert(ptr->getSequence());
     }
 }
@@ -133,7 +135,7 @@ void TimerQueue::cancelAllInLoop()
 {
     timers_.clear();
     cancelAllTimers_.store(true);
-    LOG_DEBUG("TimerQueue::cancelAllInLoop clear the timers_");
+    trace("TimerQueue::cancelAllInLoop clear the timers_");
 }
 
 void TimerQueue::handleRead()
@@ -156,7 +158,7 @@ void TimerQueue::handleRead()
 }
 std::vector<std::unique_ptr<Timer>> TimerQueue::getExpired(Timestamp now)
 {
-    LOG_DEBUG("get in TimerQueue::getExpired and time=%s", now.toString().c_str());
+    trace("get in TimerQueue::getExpired and time=%s", now.toString().c_str());
     std::vector<std::unique_ptr<Timer>> expireds;
     std::unique_ptr<Timer> tempPtr(new Timer(now, UINT64_MAX));
 

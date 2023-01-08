@@ -15,7 +15,7 @@ int main()
     Timer timer;
     for (int i = 0; i < 1000000; i++)
     {
-        info("log info");
+        log_info("log info");
     }
     timer.Stop();
 }

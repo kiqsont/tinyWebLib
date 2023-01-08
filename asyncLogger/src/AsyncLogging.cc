@@ -17,17 +17,17 @@ AsyncLogging::AsyncLogging(const std::string &basename, off64_t rollSize, int fl
     {
         m_curBuffer = std::make_unique<Buffer>();
         m_nextBuffer = std::make_unique<Buffer>();
-        trace("background log thread beginning to build");
+        log_trace("background log thread beginning to build");
 
         m_thread = std::make_unique<std::thread>([this]
                                                  { thread_worker(); });
-        trace("begin to init background thread resource");
+        log_trace("begin to init background thread resource");
         m_latch.wait();
-        trace("after background thread init");
+        log_trace("after background thread init");
     }
     catch (...)
     {
-        trace("create worker thread failed or buffer init failed");
+        log_trace("create worker thread failed or buffer init failed");
         do_done();
         throw std::runtime_error("AsyncLogging create thread or buffer init failed");
     }
@@ -35,7 +35,7 @@ AsyncLogging::AsyncLogging(const std::string &basename, off64_t rollSize, int fl
 
 AsyncLogging::~AsyncLogging() noexcept
 {
-    trace("AsyncLogging dtor");
+    log_trace("AsyncLogging dtor");
     do_done();
 }
 
@@ -43,12 +43,12 @@ void AsyncLogging::do_done()
 {
     m_done.store(true);
 
-    trace("do_done:1.notify the thread");
+    log_trace("do_done:1.notify the thread");
     m_cv.notify_one();
 
     if (m_thread && m_thread->joinable())
     {
-        trace("do_done:2.join the worker thread");
+        log_trace("do_done:2.join the worker thread");
         m_thread->join();
     }
 }
@@ -62,16 +62,16 @@ void AsyncLogging::append(const char *message, size_t len)
         return;
     }
 
-    trace("AsyncLogging buffer is full,notify the worker thread");
+    log_trace("AsyncLogging buffer is full,notify the worker thread");
     m_buffers.emplace_back(std::move(m_curBuffer));
     if (m_nextBuffer)
     {
-        trace("has spare buffer(nextBuffer)");
+        log_trace("has spare buffer(nextBuffer)");
         m_curBuffer = std::move(m_nextBuffer);
     }
     else
     {
-        trace("hasn't spare buffer, and create new buffer space");
+        log_trace("hasn't spare buffer, and create new buffer space");
         try
         {
             m_curBuffer = std::make_unique<Buffer>();
@@ -102,20 +102,20 @@ void AsyncLogging::thread_worker()
             if (m_done)
                 break;
 
-            trace("new loop for async logging");
+            log_trace("new loop for async logging");
             {
                 std::unique_lock<std::mutex> ul(m_mutex);
-                trace("get unique_lock");
+                log_trace("get unique_lock");
                 if (m_buffers.empty())
                 {
                     if (!once)
                     {
-                        trace("first time to run worker thread");
+                        log_trace("first time to run worker thread");
                         once = true;
                         m_latch.countDown();
                     }
                     m_cv.wait_for(ul, std::chrono::seconds(m_flushInterval));
-                    trace("worker thread wake up or timeout {:d}s", m_flushInterval);
+                    log_trace("worker thread wake up or timeout {:d}s", m_flushInterval);
                 }
 
                 m_buffers.emplace_back(std::move(m_curBuffer));
@@ -124,7 +124,7 @@ void AsyncLogging::thread_worker()
 
                 if (!m_nextBuffer)
                 {
-                    trace("update nextBuffer");
+                    log_trace("update nextBuffer");
                     m_nextBuffer = std::move(newBuffer2);
                 }
             }
@@ -136,7 +136,7 @@ void AsyncLogging::thread_worker()
 
             if (buffersToWrite.size() > 25) // too much log data, drop some buffer data
             {
-                trace("too much log data, drop log data but save 2 buffer");
+                log_trace("too much log data, drop log data but save 2 buffer");
                 char buf[256]{0};
                 snprintf(buf, sizeof buf, "Dropped log data at %s, %zd larger buffers", Util::getCurDateTime(true), buffersToWrite.size());
                 fputs(buf, stderr);
@@ -145,7 +145,7 @@ void AsyncLogging::thread_worker()
             }
 
             // begin to write
-            trace("Begin to write log data");
+            log_trace("Begin to write log data");
             for (const auto &buffer : buffersToWrite)
             {
                 output.append(buffer->data(), buffer->size());
@@ -160,7 +160,7 @@ void AsyncLogging::thread_worker()
             // reset newBuffer1
             if (!newBuffer1)
             {
-                trace("newBuffer1 update");
+                log_trace("newBuffer1 update");
                 assert(!buffersToWrite.empty());
                 newBuffer1 = std::move(buffersToWrite.back());
                 buffersToWrite.pop_back();
@@ -169,7 +169,7 @@ void AsyncLogging::thread_worker()
             // reset newBuffer2
             if (!newBuffer2)
             {
-                trace("newBuffer2 update");
+                log_trace("newBuffer2 update");
                 assert(!buffersToWrite.empty());
                 newBuffer2 = std::move(buffersToWrite.back());
                 buffersToWrite.pop_back();
@@ -178,14 +178,14 @@ void AsyncLogging::thread_worker()
 
             buffersToWrite.clear();
             output.flush();
-            trace("flush log data");
+            log_trace("flush log data");
         }
         output.flush();
-        trace("thread normal exit");
+        log_trace("thread normal exit");
     }
     catch (const std::exception &e)
     {
-        trace("thread exit error : {}", e.what());
+        log_trace("thread exit error : {}", e.what());
         fprintf(stderr, "thread abnormal exit:%s", e.what());
         m_thread.reset();
     }
