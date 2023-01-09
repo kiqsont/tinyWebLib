@@ -306,18 +306,6 @@ Buffer.h
 HttpRequest.h
 /home/kiqsont/program/muduo/tinyWebLib/http/HttpRequest.h
 
-/home/kiqsont/program/muduo/tinyWebLib/http/HttpServer.cc
-HttpServer.h
-/home/kiqsont/program/muduo/tinyWebLib/http/HttpServer.h
-TcpConnection.h
-/home/kiqsont/program/muduo/tinyWebLib/http/TcpConnection.h
-functional
--
-fcntl.h
--
-unistd.h
--
-
 /home/kiqsont/program/muduo/tinyWebLib/http/HttpServer.h
 TcpServer.h
 /home/kiqsont/program/muduo/tinyWebLib/http/TcpServer.h

@@ -104,6 +104,7 @@ int main()
 
     server.File("/file", "test.jpg");
 
+    server.setThreadNum(4);
     server.start();
     loop.loop();
 }
