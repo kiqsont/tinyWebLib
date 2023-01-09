@@ -80,14 +80,14 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
         }
         if (code != 1)
         {
-            log_error("ssl accept error {} and clse the connection", SSL_get_error(ssl, code));
+            log_error("ssl accept error {} and clean the connection", SSL_get_error(ssl, code));
             SSL_free(ssl);
             ::close(sockfd);
             return;
         }
     }
 
-    TcpConnectionPtr conn(new TcpConnection(ioLoop, connName, sockfd, localAddr, peerAddr));
+    TcpConnectionPtr conn(new TcpConnection(ioLoop, connName, sockfd, localAddr, peerAddr, security_, ssl));
     connections_[connName] = conn;
 
     // user set

@@ -96,7 +96,7 @@ void TcpConnection::handleWrite()
         }
         else
         {
-            log_error("TcpConnection::handleWrite\n");
+            log_error("TcpConnection::handleWrite with errno:{}", saveErrno);
         }
     }
     else
@@ -181,6 +181,7 @@ void TcpConnection::sendInLoop(const void *message, size_t len)
             nwrote = SSL_write(ssl_, message, len);
         else
             nwrote = ::write(channel_->fd(), message, len);
+
         if (nwrote >= 0)
         {
 

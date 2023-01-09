@@ -31,10 +31,10 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
         resp->setContentType("text/html");
         resp->addHeader("Server", "httpServer");
         std::string now = Timestamp::now().toString();
-        resp->setBody(R"(<html><head><title>This is title</title></head>"
-                      "<body><h1>Hello</h1>Now is " +
+        resp->setBody(R"(<html><head><title>This is title</title></head>
+                      <body><h1>Hello</h1>Now is ")" +
                       now +
-                      "<h1>line</h1></body></html>)");
+                      "<h1>line</h1></body></html>");
     }
     else if (req.path() == "/favicon.ico")
     {
@@ -80,11 +80,11 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
 int main()
 {
 
-    InetAddress listenAddr(80);
+    InetAddress listenAddr(8888);
     EventLoop loop;
-    HttpServer server(&loop, listenAddr, "HTTP Server");
+    HttpServer server(&loop, listenAddr, "HTTPS Server");
 
-    if (!server.setSecurity("./pem/cacert.pem", "./privkey.pem"))
+    if (!server.setSecurity("./pem/cacert.pem", "./pem/privkey.pem"))
     {
         std::cout << "set http security failed\n";
         exit(1);
@@ -109,7 +109,9 @@ int main()
         resp->addHeader("Server", "httpServer");
         resp->setBody("call post"); });
 
-    server.File("/file", "test.jpg");
+    // HTTPS 中 File函数失效，因为自签证书浏览器不认，会拒绝文件写入连接的建立
+    // server.File("/file", "test.jpg");
+    // server.File("/file2", "log.txt");
 
     server.setThreadNum(4);
     server.start();

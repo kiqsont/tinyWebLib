@@ -123,7 +123,7 @@ bool HttpServer::sendStaticFile(const std::string &filename, const TcpConnection
     while (1)
     {
         n = read(fd, buf, sizeof buf);
-        if (0 == n)
+        if (0 <= n)
             break;
         conn->send(buf, n);
     }

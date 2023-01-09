@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_BUFFER
-#define KIQSONT_MUDUO_COPY_BUFFER
+#ifndef KIQSONT_MUDUO_OVERWRITE_BUFFER
+#define KIQSONT_MUDUO_OVERWRITE_BUFFER
 
 #include "noncopyable.h"
 
@@ -164,4 +164,4 @@ private:
     size_t writerIndex_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_BUFFER
+#endif // KIQSONT_MUDUO_OVERWRITE_BUFFER

@@ -276,16 +276,6 @@ TcpConnection.h
 
 ../include/noncopyable.h
 
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpContext.cc
-HttpContext.h
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpContext.h
-Logger.h
-/home/kiqsont/program/muduo/tinyWebLib/https/Logger.h
-Buffer.h
-/home/kiqsont/program/muduo/tinyWebLib/https/Buffer.h
-algorithm
--
-
 /home/kiqsont/program/muduo/tinyWebLib/https/HttpContext.h
 HttpRequest.h
 /home/kiqsont/program/muduo/tinyWebLib/https/HttpRequest.h
@@ -304,14 +294,6 @@ memory
 cstdio
 -
 
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpResponse.cc
-HttpResponse.h
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpResponse.h
-cstdio
--
-cstring
--
-
 /home/kiqsont/program/muduo/tinyWebLib/https/HttpResponse.h
 map
 -
@@ -323,18 +305,6 @@ Buffer.h
 /home/kiqsont/program/muduo/tinyWebLib/https/Buffer.h
 HttpRequest.h
 /home/kiqsont/program/muduo/tinyWebLib/https/HttpRequest.h
-
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpServer.cc
-HttpServer.h
-/home/kiqsont/program/muduo/tinyWebLib/https/HttpServer.h
-TcpConnection.h
-/home/kiqsont/program/muduo/tinyWebLib/https/TcpConnection.h
-functional
--
-fcntl.h
--
-unistd.h
--
 
 /home/kiqsont/program/muduo/tinyWebLib/https/HttpServer.h
 TcpServer.h

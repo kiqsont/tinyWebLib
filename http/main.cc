@@ -31,10 +31,10 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
         resp->setContentType("text/html");
         resp->addHeader("Server", "httpServer");
         std::string now = Timestamp::now().toString();
-        resp->setBody(R"(<html><head><title>This is title</title></head>"
-                      "<body><h1>Hello</h1>Now is " +
+        resp->setBody(R"(<html><head><title>TinyWebLib HTTP</title></head>
+                        <body><h1>Hello</h1>Now is )" +
                       now +
-                      "<h1>line</h1></body></html>)");
+                      "<h1>line</h1> <img src=./file></img>  </body></html>");
     }
     else if (req.path() == "/favicon.ico")
     {
