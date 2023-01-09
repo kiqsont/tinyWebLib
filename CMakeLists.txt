@@ -13,7 +13,7 @@ link_directories(asyncLogger/lib)
 
 file(GLOB SRC ./src/*)
 
-# add_subdirectory(http)
+add_subdirectory(http)
 
 set(TESTS ON)
 if(DEFINED TESTS)

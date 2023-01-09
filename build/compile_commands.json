@@ -95,6 +95,31 @@
   "file": "/home/kiqsont/program/muduo/tinyWebLib/src/TimingWheel.cc"
 },
 {
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/http",
+  "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/http/../include -I/home/kiqsont/program/muduo/tinyWebLib/http/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/http.out.dir/HttpContext.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/http/HttpContext.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/http/HttpContext.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/http",
+  "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/http/../include -I/home/kiqsont/program/muduo/tinyWebLib/http/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/http.out.dir/HttpResponse.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/http/HttpResponse.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/http/HttpResponse.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/http",
+  "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/http/../include -I/home/kiqsont/program/muduo/tinyWebLib/http/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/http.out.dir/HttpServer.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/http/HttpServer.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/http/HttpServer.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/http",
+  "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/http/../include -I/home/kiqsont/program/muduo/tinyWebLib/http/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/http.out.dir/main.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/http/main.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/http/main.cc"
+},
+{
+  "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/example",
+  "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/example/../inlucde -I/home/kiqsont/program/muduo/tinyWebLib/example/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/log.out.dir/logTest.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/example/logTest.cc",
+  "file": "/home/kiqsont/program/muduo/tinyWebLib/example/logTest.cc"
+},
+{
   "directory": "/home/kiqsont/program/muduo/tinyWebLib/build/example",
   "command": "/usr/bin/g++   -I/home/kiqsont/program/muduo/tinyWebLib/include -I/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/include -I/home/kiqsont/program/muduo/tinyWebLib/example/../inlucde -I/home/kiqsont/program/muduo/tinyWebLib/example/../asyncLogger/include  -O2   -std=gnu++17 -o CMakeFiles/timer.out.dir/timer.cc.o -c /home/kiqsont/program/muduo/tinyWebLib/example/timer.cc",
   "file": "/home/kiqsont/program/muduo/tinyWebLib/example/timer.cc"

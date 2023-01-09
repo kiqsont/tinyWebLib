@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+example/CMakeFiles/log.out.dir/rule:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/log.out.dir/rule
+.PHONY : example/CMakeFiles/log.out.dir/rule
+
+# Convenience name for target.
+log.out: example/CMakeFiles/log.out.dir/rule
+
+.PHONY : log.out
+
+# fast build rule for target.
+log.out/fast:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/build
+.PHONY : log.out/fast
+
+# Convenience name for target.
 example/CMakeFiles/timer.out.dir/rule:
 	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/timer.out.dir/rule
 .PHONY : example/CMakeFiles/timer.out.dir/rule
@@ -209,6 +224,33 @@ TimeServer.cc.s:
 	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/TimeServer.cc.s
 .PHONY : TimeServer.cc.s
 
+logTest.o: logTest.cc.o
+
+.PHONY : logTest.o
+
+# target to build an object file
+logTest.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/logTest.cc.o
+.PHONY : logTest.cc.o
+
+logTest.i: logTest.cc.i
+
+.PHONY : logTest.i
+
+# target to preprocess a source file
+logTest.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/logTest.cc.i
+.PHONY : logTest.cc.i
+
+logTest.s: logTest.cc.s
+
+.PHONY : logTest.s
+
+# target to generate assembly for a file
+logTest.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/logTest.cc.s
+.PHONY : logTest.cc.s
+
 timer.o: timer.cc.o
 
 .PHONY : timer.o
@@ -243,6 +285,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... log.out"
 	@echo "... timer.out"
 	@echo "... time.out"
 	@echo "... rebuild_cache"
@@ -253,6 +296,9 @@ help:
 	@echo "... TimeServer.o"
 	@echo "... TimeServer.i"
 	@echo "... TimeServer.s"
+	@echo "... logTest.o"
+	@echo "... logTest.i"
+	@echo "... logTest.s"
 	@echo "... timer.o"
 	@echo "... timer.i"
 	@echo "... timer.s"

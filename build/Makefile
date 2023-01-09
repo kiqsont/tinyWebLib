@@ -124,6 +124,32 @@ tinyWebLib/fast:
 .PHONY : tinyWebLib/fast
 
 #=============================================================================
+# Target rules for targets named http.out
+
+# Build rule for target.
+http.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 http.out
+.PHONY : http.out
+
+# fast build rule for target.
+http.out/fast:
+	$(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/build
+.PHONY : http.out/fast
+
+#=============================================================================
+# Target rules for targets named log.out
+
+# Build rule for target.
+log.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 log.out
+.PHONY : log.out
+
+# fast build rule for target.
+log.out/fast:
+	$(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/build
+.PHONY : log.out/fast
+
+#=============================================================================
 # Target rules for targets named timer.out
 
 # Build rule for target.
@@ -684,6 +710,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... tinyWebLib"
+	@echo "... http.out"
+	@echo "... log.out"
 	@echo "... timer.out"
 	@echo "... time.out"
 	@echo "... echo.out"

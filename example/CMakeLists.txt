@@ -10,3 +10,6 @@ target_link_libraries(time.out tinyWebLib)
 
 add_executable(timer.out timer.cc)
 target_link_libraries(timer.out tinyWebLib)
+
+add_executable(log.out logTest.cc)
+target_link_libraries(log.out tinyWebLib)

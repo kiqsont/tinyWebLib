@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -18,7 +19,21 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						3
+						5
+					]
+				},
+				{
+					"build" : "http",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "http",
+					"targetIndexes" : 
+					[
+						1
 					]
 				},
 				{
@@ -33,8 +48,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -45,7 +61,8 @@
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					],
 					"name" : "tinyWebLib",
 					"targetIndexes" : 
@@ -53,14 +70,16 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 1,
+					"directoryIndex" : 2,
 					"id" : "echo.out::@70983d692f648185febe",
 					"jsonFile" : "target-echo.out-Release-be89eecc98275879718c.json",
 					"name" : "echo.out",
@@ -68,13 +87,27 @@
 				},
 				{
 					"directoryIndex" : 1,
+					"id" : "http.out::@bd0a5d6c0bd9e6f494f8",
+					"jsonFile" : "target-http.out-Release-141f512406b9379505a9.json",
+					"name" : "http.out",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "log.out::@70983d692f648185febe",
+					"jsonFile" : "target-log.out-Release-9817620c6fc4c2b564bd.json",
+					"name" : "log.out",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
 					"id" : "time.out::@70983d692f648185febe",
 					"jsonFile" : "target-time.out-Release-996c0f4806eeb1385071.json",
 					"name" : "time.out",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 1,
+					"directoryIndex" : 2,
 					"id" : "timer.out::@70983d692f648185febe",
 					"jsonFile" : "target-timer.out-Release-baf447ce1b5f7f3e9e3b.json",
 					"name" : "timer.out",

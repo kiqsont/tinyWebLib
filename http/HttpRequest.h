@@ -1,8 +1,8 @@
 
-#ifndef MUDUO_COPY_HTTP_REQUEST
-#define MUDUO_COPY_HTTP_REQUEST
+#ifndef KIQSONT_HTTP_REQUEST
+#define KIQSONT_HTTP_REQUEST
 
-#include <muduo_copy/Timestamp.h>
+#include "Timestamp.h"
 #include <map>
 #include <string>
 #include <assert.h>
@@ -203,4 +203,4 @@ private:
     std::shared_ptr<TcpConnection> conn_;
 };
 
-#endif // MUDUO_COPY_HTTP_REQUEST
+#endif // KIQSONT_HTTP_REQUEST

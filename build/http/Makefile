@@ -110,6 +110,129 @@ depend:
 	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+http/CMakeFiles/http.out.dir/rule:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 http/CMakeFiles/http.out.dir/rule
+.PHONY : http/CMakeFiles/http.out.dir/rule
+
+# Convenience name for target.
+http.out: http/CMakeFiles/http.out.dir/rule
+
+.PHONY : http.out
+
+# fast build rule for target.
+http.out/fast:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/build
+.PHONY : http.out/fast
+
+HttpContext.o: HttpContext.cc.o
+
+.PHONY : HttpContext.o
+
+# target to build an object file
+HttpContext.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpContext.cc.o
+.PHONY : HttpContext.cc.o
+
+HttpContext.i: HttpContext.cc.i
+
+.PHONY : HttpContext.i
+
+# target to preprocess a source file
+HttpContext.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpContext.cc.i
+.PHONY : HttpContext.cc.i
+
+HttpContext.s: HttpContext.cc.s
+
+.PHONY : HttpContext.s
+
+# target to generate assembly for a file
+HttpContext.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpContext.cc.s
+.PHONY : HttpContext.cc.s
+
+HttpResponse.o: HttpResponse.cc.o
+
+.PHONY : HttpResponse.o
+
+# target to build an object file
+HttpResponse.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpResponse.cc.o
+.PHONY : HttpResponse.cc.o
+
+HttpResponse.i: HttpResponse.cc.i
+
+.PHONY : HttpResponse.i
+
+# target to preprocess a source file
+HttpResponse.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpResponse.cc.i
+.PHONY : HttpResponse.cc.i
+
+HttpResponse.s: HttpResponse.cc.s
+
+.PHONY : HttpResponse.s
+
+# target to generate assembly for a file
+HttpResponse.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpResponse.cc.s
+.PHONY : HttpResponse.cc.s
+
+HttpServer.o: HttpServer.cc.o
+
+.PHONY : HttpServer.o
+
+# target to build an object file
+HttpServer.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpServer.cc.o
+.PHONY : HttpServer.cc.o
+
+HttpServer.i: HttpServer.cc.i
+
+.PHONY : HttpServer.i
+
+# target to preprocess a source file
+HttpServer.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpServer.cc.i
+.PHONY : HttpServer.cc.i
+
+HttpServer.s: HttpServer.cc.s
+
+.PHONY : HttpServer.s
+
+# target to generate assembly for a file
+HttpServer.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/HttpServer.cc.s
+.PHONY : HttpServer.cc.s
+
+main.o: main.cc.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/main.cc.o
+.PHONY : main.cc.o
+
+main.i: main.cc.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/main.cc.i
+.PHONY : main.cc.i
+
+main.s: main.cc.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f http/CMakeFiles/http.out.dir/build.make http/CMakeFiles/http.out.dir/main.cc.s
+.PHONY : main.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +241,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... http.out"
+	@echo "... HttpContext.o"
+	@echo "... HttpContext.i"
+	@echo "... HttpContext.s"
+	@echo "... HttpResponse.o"
+	@echo "... HttpResponse.i"
+	@echo "... HttpResponse.s"
+	@echo "... HttpServer.o"
+	@echo "... HttpServer.i"
+	@echo "... HttpServer.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
