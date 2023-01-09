@@ -124,6 +124,19 @@ tinyWebLib/fast:
 .PHONY : tinyWebLib/fast
 
 #=============================================================================
+# Target rules for targets named timer.out
+
+# Build rule for target.
+timer.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 timer.out
+.PHONY : timer.out
+
+# fast build rule for target.
+timer.out/fast:
+	$(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/build
+.PHONY : timer.out/fast
+
+#=============================================================================
 # Target rules for targets named time.out
 
 # Build rule for target.
@@ -671,6 +684,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... tinyWebLib"
+	@echo "... timer.out"
 	@echo "... time.out"
 	@echo "... echo.out"
 	@echo "... src/Acceptor.o"

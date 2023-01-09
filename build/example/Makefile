@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+example/CMakeFiles/timer.out.dir/rule:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/timer.out.dir/rule
+.PHONY : example/CMakeFiles/timer.out.dir/rule
+
+# Convenience name for target.
+timer.out: example/CMakeFiles/timer.out.dir/rule
+
+.PHONY : timer.out
+
+# fast build rule for target.
+timer.out/fast:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/build
+.PHONY : timer.out/fast
+
+# Convenience name for target.
 example/CMakeFiles/time.out.dir/rule:
 	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/time.out.dir/rule
 .PHONY : example/CMakeFiles/time.out.dir/rule
@@ -194,6 +209,33 @@ TimeServer.cc.s:
 	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/TimeServer.cc.s
 .PHONY : TimeServer.cc.s
 
+timer.o: timer.cc.o
+
+.PHONY : timer.o
+
+# target to build an object file
+timer.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/timer.cc.o
+.PHONY : timer.cc.o
+
+timer.i: timer.cc.i
+
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/timer.cc.i
+.PHONY : timer.cc.i
+
+timer.s: timer.cc.s
+
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/timer.cc.s
+.PHONY : timer.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,6 +243,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... timer.out"
 	@echo "... time.out"
 	@echo "... rebuild_cache"
 	@echo "... echo.out"
@@ -210,6 +253,9 @@ help:
 	@echo "... TimeServer.o"
 	@echo "... TimeServer.i"
 	@echo "... TimeServer.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 .PHONY : help
 
 

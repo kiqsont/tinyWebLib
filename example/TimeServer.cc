@@ -11,9 +11,9 @@ void onConnect(const TcpConnectionPtr &conn)
     {
         connectedFlag = "UP";
         conn->send(Timestamp::now().toString());
-        conn->shutdown();
     }
     log_info("Project_Copy Server - {} -> {} is {}", conn->localAddress().toIpPort().c_str(), conn->peerAddress().toIpPort().c_str(), connectedFlag.c_str());
+    conn->shutdown();
 }
 
 int main()

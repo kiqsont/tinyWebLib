@@ -18,7 +18,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						2
+						3
 					]
 				},
 				{
@@ -33,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -51,7 +52,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -69,6 +71,13 @@
 					"id" : "time.out::@70983d692f648185febe",
 					"jsonFile" : "target-time.out-Release-996c0f4806eeb1385071.json",
 					"name" : "time.out",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "timer.out::@70983d692f648185febe",
+					"jsonFile" : "target-timer.out-Release-baf447ce1b5f7f3e9e3b.json",
+					"name" : "timer.out",
 					"projectIndex" : 0
 				},
 				{
