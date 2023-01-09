@@ -137,6 +137,19 @@ http.out/fast:
 .PHONY : http.out/fast
 
 #=============================================================================
+# Target rules for targets named https.out
+
+# Build rule for target.
+https.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 https.out
+.PHONY : https.out
+
+# fast build rule for target.
+https.out/fast:
+	$(MAKE) -f https/CMakeFiles/https.out.dir/build.make https/CMakeFiles/https.out.dir/build
+.PHONY : https.out/fast
+
+#=============================================================================
 # Target rules for targets named log.out
 
 # Build rule for target.
@@ -711,6 +724,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... tinyWebLib"
 	@echo "... http.out"
+	@echo "... https.out"
 	@echo "... log.out"
 	@echo "... timer.out"
 	@echo "... time.out"

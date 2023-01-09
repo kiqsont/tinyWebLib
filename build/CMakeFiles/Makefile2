@@ -55,12 +55,14 @@ CMAKE_BINARY_DIR = /home/kiqsont/program/muduo/tinyWebLib/build
 # The main recursive "all" target.
 all: CMakeFiles/tinyWebLib.dir/all
 all: http/all
+all: https/all
 all: example/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: http/preinstall
+preinstall: https/preinstall
 preinstall: example/preinstall
 
 .PHONY : preinstall
@@ -68,6 +70,7 @@ preinstall: example/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/tinyWebLib.dir/clean
 clean: http/clean
+clean: https/clean
 clean: example/clean
 
 .PHONY : clean
@@ -115,13 +118,31 @@ http/clean: http/CMakeFiles/http.out.dir/clean
 .PHONY : http/clean
 
 #=============================================================================
+# Directory level rules for directory https
+
+# Recursive "all" directory target.
+https/all: https/CMakeFiles/https.out.dir/all
+
+.PHONY : https/all
+
+# Recursive "preinstall" directory target.
+https/preinstall:
+
+.PHONY : https/preinstall
+
+# Recursive "clean" directory target.
+https/clean: https/CMakeFiles/https.out.dir/clean
+
+.PHONY : https/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/tinyWebLib.dir
 
 # All Build rule for target.
 CMakeFiles/tinyWebLib.dir/all:
 	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/depend
 	$(MAKE) -f CMakeFiles/tinyWebLib.dir/build.make CMakeFiles/tinyWebLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target tinyWebLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38 "Built target tinyWebLib"
 .PHONY : CMakeFiles/tinyWebLib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -169,13 +190,40 @@ http/CMakeFiles/http.out.dir/clean:
 .PHONY : http/CMakeFiles/http.out.dir/clean
 
 #=============================================================================
+# Target rules for target https/CMakeFiles/https.out.dir
+
+# All Build rule for target.
+https/CMakeFiles/https.out.dir/all: CMakeFiles/tinyWebLib.dir/all
+	$(MAKE) -f https/CMakeFiles/https.out.dir/build.make https/CMakeFiles/https.out.dir/depend
+	$(MAKE) -f https/CMakeFiles/https.out.dir/build.make https/CMakeFiles/https.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=8,9,10,11,12 "Built target https.out"
+.PHONY : https/CMakeFiles/https.out.dir/all
+
+# Build rule for subdir invocation for target.
+https/CMakeFiles/https.out.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles 25
+	$(MAKE) -f CMakeFiles/Makefile2 https/CMakeFiles/https.out.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles 0
+.PHONY : https/CMakeFiles/https.out.dir/rule
+
+# Convenience name for target.
+https.out: https/CMakeFiles/https.out.dir/rule
+
+.PHONY : https.out
+
+# clean rule for target.
+https/CMakeFiles/https.out.dir/clean:
+	$(MAKE) -f https/CMakeFiles/https.out.dir/build.make https/CMakeFiles/https.out.dir/clean
+.PHONY : https/CMakeFiles/https.out.dir/clean
+
+#=============================================================================
 # Target rules for target example/CMakeFiles/log.out.dir
 
 # All Build rule for target.
 example/CMakeFiles/log.out.dir/all: CMakeFiles/tinyWebLib.dir/all
 	$(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/depend
 	$(MAKE) -f example/CMakeFiles/log.out.dir/build.make example/CMakeFiles/log.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=8,9 "Built target log.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=13,14 "Built target log.out"
 .PHONY : example/CMakeFiles/log.out.dir/all
 
 # Build rule for subdir invocation for target.
@@ -202,7 +250,7 @@ example/CMakeFiles/log.out.dir/clean:
 example/CMakeFiles/timer.out.dir/all: CMakeFiles/tinyWebLib.dir/all
 	$(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/depend
 	$(MAKE) -f example/CMakeFiles/timer.out.dir/build.make example/CMakeFiles/timer.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=12,13 "Built target timer.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=17,18 "Built target timer.out"
 .PHONY : example/CMakeFiles/timer.out.dir/all
 
 # Build rule for subdir invocation for target.
@@ -229,7 +277,7 @@ example/CMakeFiles/timer.out.dir/clean:
 example/CMakeFiles/time.out.dir/all: CMakeFiles/tinyWebLib.dir/all
 	$(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/depend
 	$(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=10,11 "Built target time.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kiqsont/program/muduo/tinyWebLib/build/CMakeFiles --progress-num=15,16 "Built target time.out"
 .PHONY : example/CMakeFiles/time.out.dir/all
 
 # Build rule for subdir invocation for target.

@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../example/CMakeLists.txt"
   "../http/CMakeLists.txt"
+  "../https/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCXXCompiler.cmake.in"
   "/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
@@ -93,6 +94,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "http/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "https/CMakeFiles/CMakeDirectoryInformation.cmake"
   "example/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -100,6 +102,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/tinyWebLib.dir/DependInfo.cmake"
   "http/CMakeFiles/http.out.dir/DependInfo.cmake"
+  "https/CMakeFiles/https.out.dir/DependInfo.cmake"
   "example/CMakeFiles/log.out.dir/DependInfo.cmake"
   "example/CMakeFiles/timer.out.dir/DependInfo.cmake"
   "example/CMakeFiles/time.out.dir/DependInfo.cmake"

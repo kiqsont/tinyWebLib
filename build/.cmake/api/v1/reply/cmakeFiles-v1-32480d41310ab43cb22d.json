@@ -375,6 +375,9 @@
 			"path" : "http/CMakeLists.txt"
 		},
 		{
+			"path" : "https/CMakeLists.txt"
+		},
+		{
 			"path" : "example/CMakeLists.txt"
 		}
 	],

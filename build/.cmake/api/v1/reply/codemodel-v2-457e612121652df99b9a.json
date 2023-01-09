@@ -9,7 +9,8 @@
 					"childIndexes" : 
 					[
 						1,
-						2
+						2,
+						3
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -19,7 +20,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						5
+						6
 					]
 				},
 				{
@@ -37,6 +38,20 @@
 					]
 				},
 				{
+					"build" : "https",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "https",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
 					"build" : "example",
 					"minimumCMakeVersion" : 
 					{
@@ -48,9 +63,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -62,7 +77,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					],
 					"name" : "tinyWebLib",
 					"targetIndexes" : 
@@ -72,14 +88,15 @@
 						2,
 						3,
 						4,
-						5
+						5,
+						6
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 3,
 					"id" : "echo.out::@70983d692f648185febe",
 					"jsonFile" : "target-echo.out-Release-be89eecc98275879718c.json",
 					"name" : "echo.out",
@@ -94,20 +111,27 @@
 				},
 				{
 					"directoryIndex" : 2,
+					"id" : "https.out::@4eb4698d7923c8d79f79",
+					"jsonFile" : "target-https.out-Release-8c37d27f7e5226fe9695.json",
+					"name" : "https.out",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
 					"id" : "log.out::@70983d692f648185febe",
 					"jsonFile" : "target-log.out-Release-9817620c6fc4c2b564bd.json",
 					"name" : "log.out",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 3,
 					"id" : "time.out::@70983d692f648185febe",
 					"jsonFile" : "target-time.out-Release-996c0f4806eeb1385071.json",
 					"name" : "time.out",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 3,
 					"id" : "timer.out::@70983d692f648185febe",
 					"jsonFile" : "target-timer.out-Release-baf447ce1b5f7f3e9e3b.json",
 					"name" : "timer.out",
@@ -116,7 +140,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "tinyWebLib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tinyWebLib-Release-a2c437c834841019418a.json",
+					"jsonFile" : "target-tinyWebLib-Release-95e3994662bb242c1faf.json",
 					"name" : "tinyWebLib",
 					"projectIndex" : 0
 				}
