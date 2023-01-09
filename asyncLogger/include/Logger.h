@@ -2,7 +2,7 @@
 #define ASYNC_LOGGER_LOGGER
 
 // for log trace
-#define LOG_TRACE
+// #define LOG_TRACE
 
 #include <cstdio>
 #include <cstdlib>
