@@ -124,17 +124,30 @@ tinyWebLib/fast:
 .PHONY : tinyWebLib/fast
 
 #=============================================================================
-# Target rules for targets named test.out
+# Target rules for targets named time.out
 
 # Build rule for target.
-test.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test.out
-.PHONY : test.out
+time.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 time.out
+.PHONY : time.out
 
 # fast build rule for target.
-test.out/fast:
-	$(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/build
-.PHONY : test.out/fast
+time.out/fast:
+	$(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/build
+.PHONY : time.out/fast
+
+#=============================================================================
+# Target rules for targets named echo.out
+
+# Build rule for target.
+echo.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo.out
+.PHONY : echo.out
+
+# fast build rule for target.
+echo.out/fast:
+	$(MAKE) -f example/CMakeFiles/echo.out.dir/build.make example/CMakeFiles/echo.out.dir/build
+.PHONY : echo.out/fast
 
 src/Acceptor.o: src/Acceptor.cc.o
 
@@ -658,7 +671,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... tinyWebLib"
-	@echo "... test.out"
+	@echo "... time.out"
+	@echo "... echo.out"
 	@echo "... src/Acceptor.o"
 	@echo "... src/Acceptor.i"
 	@echo "... src/Acceptor.s"

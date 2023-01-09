@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/kiqsont/program/muduo/tinyWebLib/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,46 +111,88 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-example/CMakeFiles/test.out.dir/rule:
-	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/test.out.dir/rule
-.PHONY : example/CMakeFiles/test.out.dir/rule
+example/CMakeFiles/time.out.dir/rule:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/time.out.dir/rule
+.PHONY : example/CMakeFiles/time.out.dir/rule
 
 # Convenience name for target.
-test.out: example/CMakeFiles/test.out.dir/rule
+time.out: example/CMakeFiles/time.out.dir/rule
 
-.PHONY : test.out
+.PHONY : time.out
 
 # fast build rule for target.
-test.out/fast:
-	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/build
-.PHONY : test.out/fast
+time.out/fast:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/build
+.PHONY : time.out/fast
 
-Echo.o: Echo.cc.o
+# Convenience name for target.
+example/CMakeFiles/echo.out.dir/rule:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/echo.out.dir/rule
+.PHONY : example/CMakeFiles/echo.out.dir/rule
 
-.PHONY : Echo.o
+# Convenience name for target.
+echo.out: example/CMakeFiles/echo.out.dir/rule
+
+.PHONY : echo.out
+
+# fast build rule for target.
+echo.out/fast:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/echo.out.dir/build.make example/CMakeFiles/echo.out.dir/build
+.PHONY : echo.out/fast
+
+EchoServer.o: EchoServer.cc.o
+
+.PHONY : EchoServer.o
 
 # target to build an object file
-Echo.cc.o:
-	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/Echo.cc.o
-.PHONY : Echo.cc.o
+EchoServer.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/echo.out.dir/build.make example/CMakeFiles/echo.out.dir/EchoServer.cc.o
+.PHONY : EchoServer.cc.o
 
-Echo.i: Echo.cc.i
+EchoServer.i: EchoServer.cc.i
 
-.PHONY : Echo.i
+.PHONY : EchoServer.i
 
 # target to preprocess a source file
-Echo.cc.i:
-	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/Echo.cc.i
-.PHONY : Echo.cc.i
+EchoServer.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/echo.out.dir/build.make example/CMakeFiles/echo.out.dir/EchoServer.cc.i
+.PHONY : EchoServer.cc.i
 
-Echo.s: Echo.cc.s
+EchoServer.s: EchoServer.cc.s
 
-.PHONY : Echo.s
+.PHONY : EchoServer.s
 
 # target to generate assembly for a file
-Echo.cc.s:
-	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/test.out.dir/build.make example/CMakeFiles/test.out.dir/Echo.cc.s
-.PHONY : Echo.cc.s
+EchoServer.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/echo.out.dir/build.make example/CMakeFiles/echo.out.dir/EchoServer.cc.s
+.PHONY : EchoServer.cc.s
+
+TimeServer.o: TimeServer.cc.o
+
+.PHONY : TimeServer.o
+
+# target to build an object file
+TimeServer.cc.o:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/TimeServer.cc.o
+.PHONY : TimeServer.cc.o
+
+TimeServer.i: TimeServer.cc.i
+
+.PHONY : TimeServer.i
+
+# target to preprocess a source file
+TimeServer.cc.i:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/TimeServer.cc.i
+.PHONY : TimeServer.cc.i
+
+TimeServer.s: TimeServer.cc.s
+
+.PHONY : TimeServer.s
+
+# target to generate assembly for a file
+TimeServer.cc.s:
+	cd /home/kiqsont/program/muduo/tinyWebLib/build && $(MAKE) -f example/CMakeFiles/time.out.dir/build.make example/CMakeFiles/time.out.dir/TimeServer.cc.s
+.PHONY : TimeServer.cc.s
 
 # Help Target
 help:
@@ -158,12 +200,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test.out"
-	@echo "... Echo.o"
-	@echo "... Echo.i"
-	@echo "... Echo.s"
+	@echo "... time.out"
+	@echo "... rebuild_cache"
+	@echo "... echo.out"
+	@echo "... EchoServer.o"
+	@echo "... EchoServer.i"
+	@echo "... EchoServer.s"
+	@echo "... TimeServer.o"
+	@echo "... TimeServer.i"
+	@echo "... TimeServer.s"
 .PHONY : help
 
 

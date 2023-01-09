@@ -2,7 +2,7 @@
 #define ASYNC_LOGGER_LOGGER
 
 // for log trace
-// #define LOG_TRACE
+#define LOG_TRACE
 
 #include <cstdio>
 #include <cstdlib>
@@ -66,7 +66,7 @@ namespace asyncLogger
     {
         int print_flag = LstdFlags;
         const char *output_prefix = nullptr;
-        const char *output_basedir = "./logFile";
+        const char *output_basedir = "./log/logFile";
         bool is_console = true;
         asyncLoggerDetail::callback_t before;
         asyncLoggerDetail::callback_t end;

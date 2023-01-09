@@ -27,7 +27,7 @@ const char *s_level_text[LEVEL_COUNT + 1] = {"[DEBUG]  ", "[INFO]   ",
                                              "[FATAL]  ", "[UNKNOWN]"};
 
 fmt::color s_color[LEVEL_COUNT + 1] = {
-    fmt::color::blue,
+    fmt::color::light_blue,
     fmt::color::green,
     fmt::color::yellow,
     fmt::color::red,
