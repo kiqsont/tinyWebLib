@@ -110,8 +110,10 @@ public:
 
     // read from fd
     ssize_t readFd(int fd, int *saveErrno);
-
     ssize_t writeFd(int fd, int *saveErrno);
+
+    // read from ssl
+    // int readSSL(SSL *ssl, int *saveErrno);
 
     const char *findCRLF(const char *start = nullptr) const
     {
