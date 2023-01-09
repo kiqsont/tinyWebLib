@@ -14,8 +14,6 @@
 #include <atomic>
 #include <any>
 
-#include <openssl/err.h>
-
 class Channel;
 class EventLoop;
 class Socket;
@@ -35,7 +33,7 @@ public:
     static void muduoDefaultMessageCallback(const TcpConnectionPtr &conn, Buffer *buf, Timestamp);
 
 public:
-    TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &loaclAddr, const InetAddress &peerAddr, bool isSSL = false, SSL *ssl = nullptr);
+    TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &loaclAddr, const InetAddress &peerAddr);
     ~TcpConnection();
 
     EventLoop *getLoop() const { return loop_; }
@@ -82,8 +80,8 @@ public:
     {
         return context_;
     }
-
-    std::any &getMutableContext()
+    
+    std::any& getMutableContext()
     {
         return context_;
     }
@@ -108,9 +106,6 @@ private:
     std::atomic_int state_;
     bool reading_;
     mutable std::any context_;
-
-    std::atomic_bool security_;
-    SSL *ssl_;
 
     std::unique_ptr<Socket> socket_;
     std::unique_ptr<Channel> channel_;

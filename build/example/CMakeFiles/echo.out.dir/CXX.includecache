@@ -95,6 +95,8 @@ algorithm
 -
 assert.h
 -
+openssl/ssl.h
+-
 
 ../include/Callbacks.h
 memory
@@ -200,6 +202,8 @@ cstring
 atomic
 -
 any
+-
+openssl/err.h
 -
 
 ../include/TcpServer.h

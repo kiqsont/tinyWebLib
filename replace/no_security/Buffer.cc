@@ -3,7 +3,6 @@
 #include <errno.h>
 #include <sys/uio.h>
 #include <unistd.h>
-#include <openssl/err.h>
 
 // works in LT
 ssize_t Buffer::readFd(int fd, int *saveErrno)
@@ -38,31 +37,6 @@ ssize_t Buffer::readFd(int fd, int *saveErrno)
 ssize_t Buffer::writeFd(int fd, int *saveErrno)
 {
     ssize_t n = ::write(fd, peek(), readableBytes());
-    if (n < 0)
-    {
-        *saveErrno = errno;
-    }
-    return n;
-}
-
-int Buffer::readSSL(SSL *ssl, int *saveErrno)
-{
-    ensureWriteableBytes(1024);
-    int n = ::SSL_read(ssl, begin() + writerIndex_, writeableBytes());
-    if (n < 0)
-    {
-        *saveErrno = errno;
-    }
-    else
-    {
-        writerIndex_ += n;
-    }
-    return n;
-}
-
-int Buffer::writeSSL(SSL *ssl, int *saveErrno)
-{
-    int n = ::SSL_write(ssl, peek(), readableBytes());
     if (n < 0)
     {
         *saveErrno = errno;

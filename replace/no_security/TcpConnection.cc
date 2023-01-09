@@ -18,8 +18,8 @@ static EventLoop *CheckLoopNotNull(EventLoop *loop)
     return loop;
 }
 
-TcpConnection::TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &localAddr, const InetAddress &peerAddr, bool isSSL, SSL *ssl)
-    : loop_(CheckLoopNotNull(loop)), name_(nameArg), state_(kConnecting), reading_(true), socket_(new Socket(sockfd)), channel_(new Channel(loop, sockfd)), localAddr_(localAddr), peerAddr_(peerAddr), security_(isSSL), ssl_(ssl), highWaterMark_(64 * 1024 * 1024) // 64M
+TcpConnection::TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &localAddr, const InetAddress &peerAddr)
+    : loop_(CheckLoopNotNull(loop)), name_(nameArg), state_(kConnecting), reading_(true), socket_(new Socket(sockfd)), channel_(new Channel(loop, sockfd)), localAddr_(localAddr), peerAddr_(peerAddr), highWaterMark_(64 * 1024 * 1024) // 64M
 {
     channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this, std::placeholders::_1));
     channel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
@@ -33,24 +33,12 @@ TcpConnection::TcpConnection(EventLoop *loop, const std::string &nameArg, int so
 TcpConnection::~TcpConnection()
 {
     log_trace("TcpConnection::dtor[{}] at fd={} state={}\n", name_.c_str(), channel_->fd(), static_cast<int>(state_));
-    if (security_.load())
-    {
-        log_trace("clean ssl");
-        socket_.reset();
-        SSL_shutdown(ssl_);
-        SSL_free(ssl_);
-    }
 }
 
 void TcpConnection::handleRead(Timestamp receiveTime)
 {
     int saveErrno = 0;
-    long n;
-    if (security_)
-        n = inputBuffer_.readSSL(ssl_, &saveErrno);
-    else
-        n = inputBuffer_.readFd(channel_->fd(), &saveErrno);
-
+    ssize_t n = inputBuffer_.readFd(channel_->fd(), &saveErrno);
     if (n > 0)
     {
         // EPOLLIN onMessage
@@ -73,11 +61,7 @@ void TcpConnection::handleWrite()
     if (channel_->isWriting())
     {
         int saveErrno = 0;
-        long n;
-        if (security_)
-            n = outputBUffer_.writeSSL(ssl_, &saveErrno);
-        else
-            n = outputBUffer_.writeFd(channel_->fd(), &saveErrno);
+        ssize_t n = outputBUffer_.writeFd(channel_->fd(), &saveErrno);
         if (n > 0)
         {
             outputBUffer_.retrieve(n);
@@ -177,13 +161,9 @@ void TcpConnection::sendInLoop(const void *message, size_t len)
     // the first time to write and out buffer hasn't data to send
     if (!channel_->isWriting() && outputBUffer_.readableBytes() == 0)
     {
-        if (security_)
-            nwrote = SSL_write(ssl_, message, len);
-        else
-            nwrote = ::write(channel_->fd(), message, len);
+        nwrote = ::write(channel_->fd(), message, len);
         if (nwrote >= 0)
         {
-
             remaining = len - nwrote;
             if (remaining == 0 && writeCompleteCallback_)
             {

@@ -160,6 +160,14 @@
 				"role" : "libraries"
 			},
 			{
+				"fragment" : "-lssl",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lcrypto",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "-lpthread",
 				"role" : "libraries"
 			},

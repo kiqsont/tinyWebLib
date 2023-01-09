@@ -108,7 +108,7 @@ void TcpClient::removeConnection(const TcpConnectionPtr &conn)
     loop_->queueInLoop(std::bind(&TcpConnection::connectDestoryed, conn));
     if (retry_.load() && connect_.load())
     {
-        log_trace("TcpClient::connect[%s] - Reconnecting to [%s]", name_.c_str(), connector_->serverAddress().toIpPort().c_str());
+        log_trace("TcpClient::connect[{}] - Reconnecting to [{}]", name_, connector_->serverAddress().toIpPort());
         connector_->restart();
     }
 }

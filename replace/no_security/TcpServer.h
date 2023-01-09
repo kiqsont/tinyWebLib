@@ -44,8 +44,6 @@ public:
 
     void setMaxConnectionTime(int maxTime);
 
-    bool setSecurity(const std::string &cacertPath, const std::string &privkeyPath);
-
     EventLoop *getLoop() const
     {
         return loop_;
@@ -92,9 +90,6 @@ private:
 
     std::shared_ptr<timingWheel::WeakConnectionList> connectionBuckets_;
     std::atomic_bool enableTimingWheel_{false};
-
-    std::atomic_bool security_ = false;
-    SSL_CTX *ctx_;
 };
 
 #endif // KIQSONT_MUDUO_COPY_TCPSERVER

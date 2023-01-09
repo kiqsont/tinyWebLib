@@ -9,8 +9,6 @@
 #include <algorithm>
 #include <assert.h>
 
-#include <openssl/ssl.h>
-
 class Buffer : noncopyable
 {
 public:
@@ -115,8 +113,7 @@ public:
     ssize_t writeFd(int fd, int *saveErrno);
 
     // read from ssl
-    int readSSL(SSL *ssl, int *saveErrno);
-    int writeSSL(SSL *ssl, int *saveErrno);
+    // int readSSL(SSL *ssl, int *saveErrno);
 
     const char *findCRLF(const char *start = nullptr) const
     {

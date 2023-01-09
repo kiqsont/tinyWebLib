@@ -189,7 +189,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 tinyWebLib_BINARY_DIR:STATIC=/home/kiqsont/program/muduo/tinyWebLib/build
 
 //Dependencies for the target
-tinyWebLib_LIB_DEPENDS:STATIC=general;asyncLogger;general;pthread;general;rt;
+tinyWebLib_LIB_DEPENDS:STATIC=general;asyncLogger;general;ssl;general;crypto;general;pthread;general;rt;
 
 //Value Computed by CMake
 tinyWebLib_SOURCE_DIR:STATIC=/home/kiqsont/program/muduo/tinyWebLib

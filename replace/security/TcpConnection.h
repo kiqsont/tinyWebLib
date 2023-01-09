@@ -32,10 +32,10 @@ public:
     };
 
     static void muduoDefaultConnectionCallback(const TcpConnectionPtr &conn);
-    static void muduoDefaultMessageCallback(const TcpConnectionPtr &conn, Buffer *buf, Timestamp);
+    static void muduoDefaultMessagesCallback(const TcpConnectionPtr &conn, Buffer *buf, Timestamp);
 
 public:
-    TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &loaclAddr, const InetAddress &peerAddr, bool isSSL = false, SSL *ssl = nullptr);
+    TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &loaclAddr, const InetAddress &peerAddr, bool isSSL = false, SSL &ssl = nullptr);
     ~TcpConnection();
 
     EventLoop *getLoop() const { return loop_; }

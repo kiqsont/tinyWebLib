@@ -19,6 +19,4 @@ if(DEFINED TESTS)
 endif()
 
 add_library(tinyWebLib SHARED ${SRC})
-target_link_libraries(tinyWebLib asyncLogger)
-target_link_libraries(tinyWebLib ssl crypto)
-target_link_libraries(tinyWebLib pthread rt)
+target_link_libraries(tinyWebLib asyncLogger pthread rt)

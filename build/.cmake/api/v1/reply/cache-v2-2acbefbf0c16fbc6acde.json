@@ -1027,7 +1027,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;asyncLogger;general;pthread;general;rt;"
+			"value" : "general;asyncLogger;general;ssl;general;crypto;general;pthread;general;rt;"
 		},
 		{
 			"name" : "tinyWebLib_SOURCE_DIR",

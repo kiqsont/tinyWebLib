@@ -3,7 +3,6 @@
 #include "TcpConnection.h"
 
 #include <cstring>
-#include <unistd.h>
 
 using namespace asyncLogger;
 
@@ -39,7 +38,6 @@ TcpServer::~TcpServer()
         ptr.reset();
         conn->getLoop()->runInLoop(std::bind(&TcpConnection::connectDestoryed, conn));
     }
-    SSL_CTX_free(ctx_);
 }
 
 // acceptor callback this
@@ -61,31 +59,6 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
         log_error("sockets::getLoaclAddr\n");
     }
     InetAddress localAddr(local);
-
-    SSL *ssl = nullptr;
-    if (security_)
-    {
-        ssl = SSL_new(ctx_);
-        SSL_set_fd(ssl, sockfd);
-        // ensure connection
-        int code = 0, retryTimes = 0;
-        while ((code = SSL_accept(ssl)) <= 0 && retryTimes++ < 100)
-        {
-            if (SSL_get_error(ssl, code) != SSL_ERROR_WANT_READ)
-            {
-                log_error("ssl accept error {}", SSL_get_error(ssl, code));
-                break;
-            }
-            usleep(50);
-        }
-        if (code != 1)
-        {
-            log_error("ssl accept error {} and clse the connection", SSL_get_error(ssl, code));
-            SSL_free(ssl);
-            ::close(sockfd);
-            return;
-        }
-    }
 
     TcpConnectionPtr conn(new TcpConnection(ioLoop, connName, sockfd, localAddr, peerAddr));
     connections_[connName] = conn;
@@ -115,41 +88,6 @@ void TcpServer::start()
         threadPool_->start(threadInitCallback_);
         loop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
     }
-}
-
-bool TcpServer::setSecurity(const std::string &cacertPath, const std::string &privkeyPath)
-{
-    if (started_.load() != 0 || security_.load() != false)
-        return false;
-
-    log_trace("Try to set TLS");
-
-    security_.store(true);
-    ctx_ = SSL_CTX_new(SSLv23_server_method());
-    if (nullptr == ctx_)
-    {
-        log_error("ctx err in SSL_CTX_new");
-        return false;
-    }
-
-    if (SSL_CTX_use_certificate_file(ctx_, cacertPath.c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        log_error("load cacert.pem err in SSL_CTX_use_certificate_file");
-        return false;
-    }
-
-    if (SSL_CTX_use_PrivateKey_file(ctx_, privkeyPath.c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        log_error("load privkey.pem err in SSL_CTX_use_PrivateKey_file");
-        return false;
-    }
-
-    if (!SSL_CTX_check_private_key(ctx_))
-    {
-        log_error("private key err in SSL_CTX_check_private_key");
-        return false;
-    }
-    return true;
 }
 
 void TcpServer::removeConnection(const TcpConnectionPtr &conn)
