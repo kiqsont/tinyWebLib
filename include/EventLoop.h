@@ -3,7 +3,6 @@
 
 // has Channel and Poller
 
-#define LOG_LIMIT_WARN
 #include "noncopyable.h"
 #include "Timestamp.h"
 #include "TimerID.h"

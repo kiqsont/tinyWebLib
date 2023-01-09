@@ -3,6 +3,7 @@
 
 // for log trace
 // #define LOG_TRACE
+#define NDEBUG
 
 #include <cstdio>
 #include <cstdlib>
