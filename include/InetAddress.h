@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_INETADDRESS
-#define KIQSONT_MUDUO_COPY_INETADDRESS
+#ifndef KIQSONT_MUDUO_OVERWRITE_INETADDRESS
+#define KIQSONT_MUDUO_OVERWRITE_INETADDRESS
 
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -32,4 +32,4 @@ private:
     sockaddr_in addr_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_INETADDRESS
+#endif // KIQSONT_MUDUO_OVERWRITE_INETADDRESS

@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_ACCEPTOR
-#define KIQSONT_MUDUO_COPY_ACCEPTOR
+#ifndef KIQSONT_MUDUO_OVERWRITE_ACCEPTOR
+#define KIQSONT_MUDUO_OVERWRITE_ACCEPTOR
 
 #include "noncopyable.h"
 #include "Socket.h"
@@ -38,4 +38,4 @@ private:
     bool listenning_ = false;
 };
 
-#endif // KIQSONT_MUDUO_COPY_ACCEPTOR
+#endif // KIQSONT_MUDUO_OVERWRITE_ACCEPTOR

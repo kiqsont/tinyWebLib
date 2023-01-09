@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_SOCKET
-#define KIQSONT_MUDUO_COPY_SOCKET
+#ifndef KIQSONT_MUDUO_OVERWRITE_SOCKET
+#define KIQSONT_MUDUO_OVERWRITE_SOCKET
 
 #include "noncopyable.h"
 
@@ -33,4 +33,4 @@ private:
     const int sockfd_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_SOCKET
+#endif // KIQSONT_MUDUO_OVERWRITE_SOCKET

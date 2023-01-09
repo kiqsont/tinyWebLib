@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_NONCOPYABLE
-#define KIQSONT_MUDUO_COPY_NONCOPYABLE
+#ifndef KIQSONT_MUDUO_OVERWRITE_NONOVERWRITEABLE
+#define KIQSONT_MUDUO_OVERWRITE_NONOVERWRITEABLE
 class noncopyable
 {
 public:
@@ -12,4 +12,4 @@ protected:
     noncopyable() = default;
     ~noncopyable() = default;
 };
-#endif // KIQSONT_MUDUO_COPY_NONCOPYABLE
+#endif // KIQSONT_MUDUO_OVERWRITE_NONOVERWRITEABLE

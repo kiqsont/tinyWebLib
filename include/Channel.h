@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_CHANNEL
-#define KIQSONT_MUDUO_COPY_CHANNEL
+#ifndef KIQSONT_MUDUO_OVERWRITE_CHANNEL
+#define KIQSONT_MUDUO_OVERWRITE_CHANNEL
 
 // 封装sockfd去处理相关的event(EPOLLIN/EPOLLOUT)
 
@@ -98,4 +98,4 @@ private:
     EventCallback errorCallback_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_CHANNEL
+#endif // KIQSONT_MUDUO_OVERWRITE_CHANNEL

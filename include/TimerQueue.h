@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TIMERQUEUE
-#define KIQSONT_MUDUO_COPY_TIMERQUEUE
+#ifndef KIQSONT_MUDUO_OVERWRITE_TIMERQUEUE
+#define KIQSONT_MUDUO_OVERWRITE_TIMERQUEUE
 
 #include "Callbacks.h"
 #include "Timestamp.h"
@@ -93,4 +93,4 @@ private:
     std::atomic_bool cancelingExpiredTimers_{false};
     std::atomic_bool cancelAllTimers_{false};
 };
-#endif // KIQSONT_MUDUO_COPY_TIMERQUEUE
+#endif // KIQSONT_MUDUO_OVERWRITE_TIMERQUEUE

@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_CALLBACKS
-#define KIQSONT_MUDUO_COPY_CALLBACKS
+#ifndef KIQSONT_MUDUO_OVERWRITE_CALLBACKS
+#define KIQSONT_MUDUO_OVERWRITE_CALLBACKS
 
 #include <memory>
 #include <functional>
@@ -17,4 +17,4 @@ using TimerCallback = std::function<void()>;
 
 using HighWaterMarkCallback = std::function<void(const TcpConnectionPtr &, size_t)>;
 
-#endif // KIQSONT_MUDUO_COPY_CALLBACKS
+#endif // KIQSONT_MUDUO_OVERWRITE_CALLBACKS

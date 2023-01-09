@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TIMESTAMP
-#define KIQSONT_MUDUO_COPY_TIMESTAMP
+#ifndef KIQSONT_MUDUO_OVERWRITE_TIMESTAMP
+#define KIQSONT_MUDUO_OVERWRITE_TIMESTAMP
 
 #include <iostream>
 #include <string>
@@ -53,4 +53,4 @@ inline bool operator<(const Timestamp &lhs, const Timestamp &rhs)
     return lhs.getRawTime() < rhs.getRawTime();
 }
 
-#endif // KIQSONT_MUDUO_COPY_TIMESTAMP
+#endif // KIQSONT_MUDUO_OVERWRITE_TIMESTAMP

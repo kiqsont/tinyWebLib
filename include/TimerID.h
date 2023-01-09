@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TIMERID
-#define KIQSONT_MUDUO_COPY_TIMERID
+#ifndef KIQSONT_MUDUO_OVERWRITE_TIMERID
+#define KIQSONT_MUDUO_OVERWRITE_TIMERID
 
 #include "Timestamp.h"
 #include <atomic>
@@ -32,4 +32,4 @@ protected:
     friend class CompableTimer;
 };
 
-#endif // KIQSONT_MUDUO_COPY_TIMERID
+#endif // KIQSONT_MUDUO_OVERWRITE_TIMERID

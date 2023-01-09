@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TIMINGWHEEL
-#define KIQSONT_MUDUO_COPY_TIMINGWHEEL
+#ifndef KIQSONT_MUDUO_OVERWRITE_TIMINGWHEEL
+#define KIQSONT_MUDUO_OVERWRITE_TIMINGWHEEL
 
 #include <list>
 #include <unordered_set>
@@ -60,4 +60,4 @@ namespace timingWheel
     void messageTimingWheel(const TcpConnectionPtr &conn, std::shared_ptr<WeakConnectionList> &connectionBuckets);
 }
 
-#endif // KIQSONT_MUDUO_COPY_TIMINGWHEEL
+#endif // KIQSONT_MUDUO_OVERWRITE_TIMINGWHEEL

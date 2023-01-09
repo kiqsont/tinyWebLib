@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_POLLER
-#define KIQSONT_MUDUO_COPY_POLLER
+#ifndef KIQSONT_MUDUO_OVERWRITE_POLLER
+#define KIQSONT_MUDUO_OVERWRITE_POLLER
 
 #include "Timestamp.h"
 
@@ -37,4 +37,4 @@ protected:
     EventLoop *ownerLoop_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_POLLER
+#endif // KIQSONT_MUDUO_OVERWRITE_POLLER

@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TCPCLIENT
-#define KIQSONT_MUDUO_COPY_TCPCLIENT
+#ifndef KIQSONT_MUDUO_OVERWRITE_TCPCLIENT
+#define KIQSONT_MUDUO_OVERWRITE_TCPCLIENT
 
 #include "TcpConnection.h"
 
@@ -70,4 +70,4 @@ private:
     mutable std::mutex mutex_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_TCPCLIENT
+#endif // KIQSONT_MUDUO_OVERWRITE_TCPCLIENT

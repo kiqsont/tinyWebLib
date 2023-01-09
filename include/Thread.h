@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_THREAD
-#define KIQSONT_MUDUO_COPY_THREAD
+#ifndef KIQSONT_MUDUO_OVERWRITE_THREAD
+#define KIQSONT_MUDUO_OVERWRITE_THREAD
 
 #include "noncopyable.h"
 
@@ -38,4 +38,4 @@ private:
     inline static std::atomic_int32_t numCreated_{0};
 };
 
-#endif // KIQSONT_MUDUO_COPY_THREAD
+#endif // KIQSONT_MUDUO_OVERWRITE_THREAD

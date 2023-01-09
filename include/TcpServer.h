@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TCPSERVER
-#define KIQSONT_MUDUO_COPY_TCPSERVER
+#ifndef KIQSONT_MUDUO_OVERWRITE_TCPSERVER
+#define KIQSONT_MUDUO_OVERWRITE_TCPSERVER
 
 #include "noncopyable.h"
 #include "EventLoop.h"
@@ -97,4 +97,4 @@ private:
     SSL_CTX *ctx_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_TCPSERVER
+#endif // KIQSONT_MUDUO_OVERWRITE_TCPSERVER

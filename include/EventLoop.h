@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_EVENTLOOP
-#define KIQSONT_MUDUO_COPY_EVENTLOOP
+#ifndef KIQSONT_MUDUO_OVERWRITE_EVENTLOOP
+#define KIQSONT_MUDUO_OVERWRITE_EVENTLOOP
 
 // has Channel and Poller
 
@@ -82,4 +82,4 @@ private:
     std::mutex mutex_;                        // to the vector above;
 };
 
-#endif // KIQSONT_MUDUO_COPY_EVENTLOOP
+#endif // KIQSONT_MUDUO_OVERWRITE_EVENTLOOP

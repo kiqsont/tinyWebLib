@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_CONNECTOR
-#define KIQSONT_MUDUO_COPY_CONNECTOR
+#ifndef KIQSONT_MUDUO_OVERWRITE_CONNECTOR
+#define KIQSONT_MUDUO_OVERWRITE_CONNECTOR
 
 #include "noncopyable.h"
 #include "InetAddress.h"
@@ -71,4 +71,4 @@ private:
     int retryDelayMs_ = kInitRetryDelayMs;
 };
 
-#endif // KIQSONT_MUDUO_COPY_CONNECTOR
+#endif // KIQSONT_MUDUO_OVERWRITE_CONNECTOR
