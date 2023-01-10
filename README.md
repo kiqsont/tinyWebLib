@@ -65,6 +65,8 @@
 支持静态文件发送，GET/POST请求接口
 
 ![](./%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/http_server.png)
+接口编写便捷
+![](./%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/http_interface.png)
 
 - HTTPS服务器
 
