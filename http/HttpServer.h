@@ -44,6 +44,7 @@ public:
     void Get(const std::string &path, HttpCallback cb);
     void Post(const std::string &path, HttpCallback cb);
     void File(const std::string &path, std::string filename);
+    void setStaticDir(const std::string &staticDir);
 
 private:
     void onConnection(const TcpConnectionPtr &conn);
@@ -57,6 +58,7 @@ private:
     PathMap getMap_;
     PathMap postMap_;
     std::map<std::string, std::string> staticFiles_;
+    std::string staticDir_ = "../static/";
 };
 
 #endif // KIQSONT_HTTP_SERVER

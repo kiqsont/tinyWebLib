@@ -3,7 +3,7 @@ project(tinyWebLib LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/example/bin)
 set(CMAKE_BUILD_TYPE "Release")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
@@ -21,4 +21,5 @@ if(DEFINED TESTS)
 endif()
 
 add_library(tinyWebLib SHARED ${SRC})
-target_link_libraries(tinyWebLib asyncLogger pthread rt)
+target_link_libraries(tinyWebLib asyncLogger)
+target_link_libraries(tinyWebLib pthread rt)

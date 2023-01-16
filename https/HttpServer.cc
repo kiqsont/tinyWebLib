@@ -131,3 +131,10 @@ bool HttpServer::sendStaticFile(const std::string &filename, const TcpConnection
     close(fd);
     return true;
 }
+
+void HttpServer::setStaticDir(const std::string &staticDir)
+{
+    staticDir_ = staticDir;
+    if (staticDir.back() != '/')
+        staticDir_.push_back('/');
+}

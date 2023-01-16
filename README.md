@@ -21,11 +21,11 @@
 
 - 使用 Epoll 的 LT模式，配合 IO多路复用，实现非阻塞 IO的主从Reactor模型
 - 使用 one loop per thread 的线程模型理念，支持线程池管理的 EventLoop
-- 独立出了异步日志库，日志数据能通过后台线程刷入到本地文件
+- 独立出了异步日志库，使用fmt库的格式，日志数据能通过后台线程刷入到本地文件,也可以输出到控制台
 - 使用基于红黑树的std::set去管理定时器队列，结合Linux的timerfd实现定时任务功能
 - 尽可能使用智能指针管理内存资源，符合 RAII 理念，减小内存泄漏风险
 - 使用状态模式，以有限状态机形式解析 HTTP 请求报文
-- 结合openssl库，实现安全通信功能
+- 结合openssl库，实现TLS安全通信功能
 
 
 
@@ -42,7 +42,13 @@
 
 运行案例
 ----
-所有的测试程序都在 build/bin 目录下，建议在build目录下运行
+项目的构建
+```bash
+# 在tinyWebLib目录下
+cmake -B build
+cmake --build build
+```
+所有的测试程序都在 example/bin 目录下，建议在bin目录下运行
 
 - Echo 服务器
 

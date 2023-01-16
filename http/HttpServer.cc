@@ -109,7 +109,7 @@ void HttpServer::File(const std::string &path, std::string filename)
 
 bool HttpServer::sendStaticFile(const std::string &filename, const TcpConnectionPtr &conn)
 {
-    std::string fullfilename = "static/" + filename;
+    std::string fullfilename = staticDir_ + filename;
     int fd = open(fullfilename.c_str(), O_RDONLY | O_CLOEXEC);
     if (fd < 0)
     {
@@ -130,4 +130,11 @@ bool HttpServer::sendStaticFile(const std::string &filename, const TcpConnection
     conn->shutdown();
     close(fd);
     return true;
+}
+
+void HttpServer::setStaticDir(const std::string &staticDir)
+{
+    staticDir_ = staticDir;
+    if (staticDir.back() != '/')
+        staticDir_.push_back('/');
 }

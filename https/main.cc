@@ -14,16 +14,6 @@ bool benchmark = false;
 
 void onRequest(const HttpRequest &req, HttpResponse *resp)
 {
-    // std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
-    // if (!benchmark)
-    // {
-    //     const std::map<std::string, std::string> &headers = req.headers();
-    //     for (const auto &header : headers)
-    //     {
-    //         std::cout << header.first << ": " << header.second << std::endl;
-    //     }
-    // }
-
     if (req.path() == "/")
     {
         resp->setStatusCode(HttpResponse::k200ok);
@@ -59,7 +49,7 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
         resp->addHeader("Content-Disposition", R"(attachment;filename="log.txt")");
         char tempBuf[1024]{0};
         std::string msg = "";
-        int fd = open("static/log.txt", O_RDONLY);
+        int fd = open("../static/log.txt", O_RDONLY);
         size_t n = 0;
         while ((n = read(fd, tempBuf, sizeof(tempBuf) - 1)))
         {
@@ -84,7 +74,7 @@ int main()
     EventLoop loop;
     HttpServer server(&loop, listenAddr, "HTTPS Server");
 
-    if (!server.setSecurity("./pem/cacert.pem", "./pem/privkey.pem"))
+    if (!server.setSecurity("../pem/cacert.pem", "../pem/privkey.pem"))
     {
         std::cout << "set http security failed\n";
         exit(1);

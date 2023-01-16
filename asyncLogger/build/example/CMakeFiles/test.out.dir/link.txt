@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2   CMakeFiles/test.out.dir/test.cc.o  -o ../bin/test.out   -L/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/example/../lib  -Wl,-rpath,/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/example/../lib:/home/kiqsont/program/muduo/tinyWebLib/asyncLogger/lib ../../lib/libasyncLogger.so -lpthread 

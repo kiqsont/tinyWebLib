@@ -10,19 +10,16 @@ using std::cout;
 using std::endl;
 
 extern char favicon[555];
-bool benchmark = false;
 
 void onRequest(const HttpRequest &req, HttpResponse *resp)
 {
     // std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
-    // if (!benchmark)
+    // const std::map<std::string, std::string> &headers = req.headers();
+    // for (const auto &header : headers)
     // {
-    //     const std::map<std::string, std::string> &headers = req.headers();
-    //     for (const auto &header : headers)
-    //     {
-    //         std::cout << header.first << ": " << header.second << std::endl;
-    //     }
+    //     std::cout << header.first << ": " << header.second << std::endl;
     // }
+    //
 
     if (req.path() == "/")
     {
@@ -59,7 +56,7 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
         resp->addHeader("Content-Disposition", R"(attachment;filename="log.txt")");
         char tempBuf[1024]{0};
         std::string msg = "";
-        int fd = open("static/log.txt", O_RDONLY);
+        int fd = open("../static/log.txt", O_RDONLY);
         size_t n = 0;
         while ((n = read(fd, tempBuf, sizeof(tempBuf) - 1)))
         {
@@ -79,7 +76,7 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
 
 int main()
 {
-
+    Config::Set({.is_console = false});
     InetAddress listenAddr(80);
     EventLoop loop;
     HttpServer server(&loop, listenAddr, "HTTP Server");

@@ -68,9 +68,13 @@ void asyncLoggerDetail::Logger::init_data()
 
 void asyncLoggerDetail::Logger::interval_log(const context &ctx)
 {
+    if (!LOG_CONFIG.console())
+    {
+        return;
+    }
     flockfile(stdout);
     fmt::print(stdout, fg(fmt::color::green),
-               "[LOG] [pid:{}] [tid:{}] {:%Y-%m-%d -%H:%M:%S} {}:{:d} {}\r\n", ProcessInfo::GetPid(), ProcessInfo::GetTid(), fmt::localtime(time(nullptr)), ctx.short_filename, ctx.line, ctx.text);
+               "[LOG_TRACE] [pid:{}] [tid:{}] {:%Y-%m-%d -%H:%M:%S} {}:{:d} {}\r\n", ProcessInfo::GetPid(), ProcessInfo::GetTid(), fmt::localtime(time(nullptr)), ctx.short_filename, ctx.line, ctx.text);
     funlockfile(stdout);
 }
 
@@ -79,6 +83,8 @@ void asyncLoggerDetail::Logger::LogFile(asyncLoggerDetail::context const &ctx)
     int tid = ProcessInfo::GetTid();
     auto *level_text = GET_LEVEL_TEXT(ctx.level);
     const char *filename = LOG_CONFIG.flags() & Llongname ? ctx.long_filename : ((LOG_CONFIG.flags() & Lshortname) ? ctx.short_filename : nullptr);
+    if (filename == nullptr)
+        return;
 
     fmt::memory_buffer buffer;
 
