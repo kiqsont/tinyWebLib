@@ -6,7 +6,6 @@
 #include "Callbacks.h"
 #include "Buffer.h"
 #include "Timestamp.h"
-#include "Logger.h"
 
 #include <memory>
 #include <string>

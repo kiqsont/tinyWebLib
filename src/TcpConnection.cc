@@ -2,6 +2,7 @@
 #include "Socket.h"
 #include "Channel.h"
 #include "EventLoop.h"
+#include "Logger.h"
 
 #include <functional>
 #include <unistd.h>
