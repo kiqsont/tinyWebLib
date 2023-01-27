@@ -41,6 +41,11 @@ public:
         return readerIndex_;
     }
 
+    char *prependPeek()
+    {
+        return begin();
+    }
+
     // the beginning address for readable buffer
     const char *peek() const
     {
