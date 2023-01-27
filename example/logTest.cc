@@ -45,6 +45,7 @@ void logConsole()
 
 int main()
 {
+    // 使用log功能需要链接asyncLogger库，并且设置好对应的inclue
     // 这两个测试不能同时运行，因为他们的output_basedir不一致，而loglib又是单例的
     // logFile();
     logConsole();
