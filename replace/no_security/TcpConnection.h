@@ -6,7 +6,6 @@
 #include "Callbacks.h"
 #include "Buffer.h"
 #include "Timestamp.h"
-#include "Logger.h"
 
 #include <memory>
 #include <string>
@@ -80,8 +79,8 @@ public:
     {
         return context_;
     }
-    
-    std::any& getMutableContext()
+
+    std::any &getMutableContext()
     {
         return context_;
     }
