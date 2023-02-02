@@ -45,8 +45,7 @@
 项目的构建
 ```bash
 # 在tinyWebLib目录下
-cmake -B build
-cmake --build build
+./autobash.sh
 ```
 所有的测试程序都在 example/bin 目录下，建议在bin目录下运行
 

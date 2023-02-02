@@ -9,8 +9,6 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 add_subdirectory(dependencies/fmt EXCLUDE_FROM_ALL)
 
 include_directories(include)
-include_directories(dependencies/fmt/include)
-
 
 file(GLOB SRC ./src/*)
 

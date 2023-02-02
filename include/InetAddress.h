@@ -10,7 +10,7 @@ class InetAddress // copyable
 public:
     InetAddress() = default;
 
-    explicit InetAddress(uint16_t port, std::string ip = "127.0.0.1");
+    explicit InetAddress(uint16_t port, std::string ip = "0.0.0.0");
 
     explicit InetAddress(const sockaddr_in &addr);
 
