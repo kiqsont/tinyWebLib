@@ -19,7 +19,6 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
     // {
     //     std::cout << header.first << ": " << header.second << std::endl;
     // }
-    //
 
     if (req.path() == "/")
     {
