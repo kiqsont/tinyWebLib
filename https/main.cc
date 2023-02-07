@@ -69,7 +69,6 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
 
 int main()
 {
-
     InetAddress listenAddr(8888);
     EventLoop loop;
     HttpServer server(&loop, listenAddr, "HTTPS Server");
