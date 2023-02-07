@@ -1,3 +1,4 @@
+# 这个异步日志库的实现是根据B站up主L__B的项目进行一些细微的修改而得
 cmake_minimum_required(VERSION 3.10.2)
 project(asyncLogger LANGUAGES CXX)
 
