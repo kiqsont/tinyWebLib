@@ -44,8 +44,6 @@
 ----
 项目的构建
 ```bash
-# 在asyncLogger目录下
-./autobuild.sh
 # 在tinyWebLib目录下
 ./autobuild.sh
 ```
