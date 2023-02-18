@@ -15,7 +15,7 @@
 /**
  *  use std::set<std::unique_ptr<Timer>> to sort the timers' sequence
  *  set sorted by expriation(Timestamp) and sequece(int64_t) of Timer
- *  when the first timer timeout, the timerfd is readable can EventLoop's poller can know it
+ *  when the first timer timeout, the timerfd is readable and EventLoop's poller can know it
  */
 
 class EventLoop;
