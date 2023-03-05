@@ -12,7 +12,7 @@ using namespace asyncLogger::asyncLoggerDetail;
 
 #define LOG_CONFIG asyncLoggerDetail::Config::instance()
 
-void asyncLogger::Config::Set(const asyncLogger::Config &config)
+void asyncLogger::LogConfig::Set(const asyncLogger::LogConfig &config)
 {
     LOG_CONFIG.basename() = config.output_basedir;
     LOG_CONFIG.flags() = config.print_flag;
@@ -74,7 +74,7 @@ void asyncLoggerDetail::Logger::interval_log(const context &ctx)
     }
     flockfile(stdout);
     fmt::print(stdout, fg(fmt::color::green),
-               "[LOG_TRACE] [pid:{}] [tid:{}] {:%Y-%m-%d -%H:%M:%S} {}:{:d} {}\r\n", ProcessInfo::GetPid(), ProcessInfo::GetTid(), fmt::localtime(time(nullptr)), ctx.short_filename, ctx.line, ctx.text);
+               "[LOG_TRACE] [pid:{}] {:%Y-%m-%d -%H:%M:%S} {}:{:d} {}\r\n", ProcessInfo::GetPid(), fmt::localtime(time(nullptr)), ctx.short_filename, ctx.line, ctx.text);
     funlockfile(stdout);
 }
 

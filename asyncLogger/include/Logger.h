@@ -67,7 +67,7 @@ namespace asyncLogger
 
     using std::string;
 
-    struct Config
+    struct LogConfig
     {
         int print_flag = LstdFlags;
         const char *output_prefix = nullptr;
@@ -76,7 +76,7 @@ namespace asyncLogger
         asyncLoggerDetail::callback_t before;
         asyncLoggerDetail::callback_t end;
 
-        static void Set(const Config &config);
+        static void Set(const LogConfig &config);
     };
 
     namespace asyncLoggerDetail
