@@ -61,6 +61,10 @@
 
 ![](./%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/timer_test.png)
 
+- 时间轮，定时踢掉空闲连接(3s)
+
+![](./%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/timingWheel.png)
+
 - HTTP服务器
 
 支持静态文件发送，GET/POST请求接口
