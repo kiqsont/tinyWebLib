@@ -1,7 +1,8 @@
 #include "TcpServer.h"
-#include "Logger.h"
 #include "TcpConnection.h"
 
+#define LOG_DEBUG
+#include "Logger.h"
 #include <cstring>
 #include <unistd.h>
 
@@ -24,14 +25,10 @@ TcpServer::TcpServer(EventLoop *loop, InetAddress &listenAddr, const std::string
 
 TcpServer::~TcpServer()
 {
-    /*
-    for(auto& item : connections_)
+    if (enableTimingWheel_)
     {
-        TcpConnectionPtr conn(item.second);
-        item.second.reset();
-        conn->getLoop()->runInLoop(std::bind(&TcpConnection::connectDestoryed,conn));
+        loop_->cancel(connectionBuckets_->timerID_);
     }
-    */
 
     for (auto &[name, ptr] : connections_)
     {
@@ -196,10 +193,11 @@ void TcpServer::setMaxConnectionTime(int maxTime)
 {
     if (started_ != 0)
     {
-        log_trace("TcpServer::setMaxConnectionTime Failed, server has started");
+        log_warn("TcpServer::setMaxConnectionTime Failed, server has started");
         return;
     }
     enableTimingWheel_.store(true);
     connectionBuckets_ = std::make_shared<timingWheel::WeakConnectionList>(maxTime);
-    loop_->runEvery(1.0, std::bind(&TcpServer::onTimingWheel, this));
+    TimerID timerID = loop_->runEvery(1.0, std::bind(&TcpServer::onTimingWheel, this));
+    connectionBuckets_->timerID_ = timerID;
 }

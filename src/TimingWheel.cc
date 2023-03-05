@@ -1,4 +1,5 @@
 #include "TimingWheel.h"
+// #define LOG_DEBUG
 #include "Logger.h"
 
 using namespace asyncLogger;
@@ -13,6 +14,7 @@ namespace timingWheel
             connectionBuckets->back().insert(entry);
             WeakEntryPtr weakEntry(entry);
             conn->setContext(weakEntry);
+            log_debug("connectionTimingWheel insert Entry:{}", entry.use_count());
         }
         else
         {
@@ -27,5 +29,6 @@ namespace timingWheel
         EntryPtr entry(weakEntry.lock());
         if (entry)
             connectionBuckets->back().insert(entry);
+        log_debug("TimingWheel::messageCallback");
     }
 }
