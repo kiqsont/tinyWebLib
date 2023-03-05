@@ -75,7 +75,7 @@ void onRequest(const HttpRequest &req, HttpResponse *resp)
 
 int main()
 {
-    Config::Set({.is_console = false});
+    LogConfig::Set({.is_console = false});
     InetAddress listenAddr(80);
     EventLoop loop;
     HttpServer server(&loop, listenAddr, "HTTP Server");
