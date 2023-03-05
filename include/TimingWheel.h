@@ -5,6 +5,11 @@
 #include <unordered_set>
 #include "Callbacks.h"
 #include "TcpConnection.h"
+#include "TimerID.h"
+
+// #define LOG_DEBUG
+#include "Logger.h"
+using namespace asyncLogger;
 
 namespace timingWheel
 {
@@ -21,7 +26,9 @@ namespace timingWheel
             TcpConnectionPtr conn = weakConn_.lock();
             if (conn)
             {
-                conn->shutdown();
+                log_debug("conn->shutdown by weakptr");
+                // conn->shutdown();
+                conn->foreClose();
             }
         }
 
@@ -34,7 +41,7 @@ namespace timingWheel
 
     struct WeakConnectionList
     {
-        explicit WeakConnectionList(int maxSize) : maxSize_(maxSize), queue_(maxSize) {}
+        explicit WeakConnectionList(int maxSize) : maxSize_(maxSize), queue_(maxSize),timerID_(Timestamp::invalid()) {}
 
         int getMaxSize() const
         {
@@ -54,6 +61,7 @@ namespace timingWheel
 
         int maxSize_;
         std::list<Bucket> queue_;
+        TimerID timerID_;
     };
 
     void connectionTimingWheel(const TcpConnectionPtr &conn, std::shared_ptr<WeakConnectionList> &connectionBuckets);
