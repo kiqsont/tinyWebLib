@@ -9,7 +9,7 @@ void logFile()
 {
     // 如果想全局开启log_trace功能，去asyncLogger/include/Logger.h 把LOG_TRACE宏开启
     // log_trace不会输出到文件
-    Config::Set({
+    LogConfig::Set({
         .output_prefix = "prefix tag for file",
         .output_basedir = "../log/logFileTest",
         .is_console = false,
@@ -31,7 +31,7 @@ void logFile()
 
 void logConsole()
 {
-    Config::Set({
+    LogConfig::Set({
         .output_prefix = "prefix tag for console",
         .is_console = true,
     });
