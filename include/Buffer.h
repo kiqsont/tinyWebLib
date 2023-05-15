@@ -66,7 +66,8 @@ public:
 
     void retrieveAll()
     {
-        readerIndex_ = writerIndex_ = kCheapPrepend;
+        readerIndex_ = kCheapPrepend;
+        writerIndex_ = kCheapPrepend;
     }
 
     std::string retrieveAllAsString()

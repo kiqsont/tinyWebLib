@@ -98,6 +98,7 @@ private:
 
     void setState(StateE state) { state_.store(state); }
     void sendInLoop(const void *message, size_t len);
+    void sendInLoop2(std::string message);
     void shutdownInLoop();
     void foreCloseInLoop();
 
