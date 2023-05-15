@@ -142,7 +142,7 @@ void TcpConnection::send(const std::string &msg)
         }
         else
         {
-            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, msg.c_str(), msg.size()));
+            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop2, this, msg));
         }
     }
 }
@@ -217,7 +217,73 @@ void TcpConnection::sendInLoop(const void *message, size_t len)
         {
             loop_->queueInLoop(std::bind(highWaterMarkCallback_, shared_from_this(), oldLen + remaining));
         }
-        outputBUffer_.append((char *)message + nwrote, remaining);
+        outputBUffer_.append((const char *)message + nwrote, remaining);
+        if (!channel_->isWriting())
+        {
+            channel_->enableWriting(); // set EPOLLOUT
+        }
+    }
+}
+
+// send message
+void TcpConnection::sendInLoop2(std::string message)
+{
+    // std::cout << "sendInLoop try to send string:" << message << "\n";
+
+    ssize_t nwrote = 0;
+    size_t len = message.size();
+    size_t remaining = len;
+    bool faultError = false;
+
+    if (state_ == kDisconnected)
+    {
+        log_error("disconnected, give up writing\n");
+        return;
+    }
+
+    // the first time to write and out buffer hasn't data to send
+    if (!channel_->isWriting() && outputBUffer_.readableBytes() == 0)
+    {
+        if (security_)
+            nwrote = SSL_write(ssl_, message.c_str(), len);
+        else
+            nwrote = ::write(channel_->fd(), message.c_str(), len);
+
+        if (nwrote >= 0)
+        {
+            log_debug("sendInLoop write bytes:{}", nwrote);
+            remaining = len - nwrote;
+            if (remaining == 0 && writeCompleteCallback_)
+            {
+                // send all data, don't need to set EPOLLOUT to channel
+                // or it would call handleWrite
+                loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
+            }
+        }
+        else // nworte < 0
+        {
+            nwrote = 0;
+            if (errno != EWOULDBLOCK)
+            {
+                log_error("TcpConnection::sendInLoop\n");
+                if (errno == EPIPE || errno == ECONNRESET) // SIGPIPE RESET
+                {
+                    faultError = true;
+                }
+            }
+        }
+    }
+
+    // data hasn't sent all ,it need to be save in outputBuffer
+    // and set EPOLLOUT to channel, calls handleWrite
+    if (!faultError && remaining > 0)
+    {
+        size_t oldLen = outputBUffer_.readableBytes();
+        if (oldLen + remaining >= highWaterMark_ && oldLen < highWaterMark_ && highWaterMarkCallback_)
+        {
+            loop_->queueInLoop(std::bind(highWaterMarkCallback_, shared_from_this(), oldLen + remaining));
+        }
+        outputBUffer_.append(message.c_str() + nwrote, remaining);
         if (!channel_->isWriting())
         {
             channel_->enableWriting(); // set EPOLLOUT

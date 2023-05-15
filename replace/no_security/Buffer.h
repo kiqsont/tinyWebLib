@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_BUFFER
-#define KIQSONT_MUDUO_COPY_BUFFER
+#ifndef KIQSONT_MUDUO_OVERWRITE_BUFFER
+#define KIQSONT_MUDUO_OVERWRITE_BUFFER
 
 #include "noncopyable.h"
 
@@ -39,6 +39,11 @@ public:
         return readerIndex_;
     }
 
+    char *prependPeek()
+    {
+        return begin();
+    }
+
     // the beginning address for readable buffer
     const char *peek() const
     {
@@ -59,7 +64,8 @@ public:
 
     void retrieveAll()
     {
-        readerIndex_ = writerIndex_ = kCheapPrepend;
+        readerIndex_ = kCheapPrepend;
+        writerIndex_ = kCheapPrepend;
     }
 
     std::string retrieveAllAsString()
@@ -112,9 +118,6 @@ public:
     ssize_t readFd(int fd, int *saveErrno);
     ssize_t writeFd(int fd, int *saveErrno);
 
-    // read from ssl
-    // int readSSL(SSL *ssl, int *saveErrno);
-
     const char *findCRLF(const char *start = nullptr) const
     {
         if (start != nullptr)
@@ -161,4 +164,4 @@ private:
     size_t writerIndex_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_BUFFER
+#endif // KIQSONT_MUDUO_OVERWRITE_BUFFER

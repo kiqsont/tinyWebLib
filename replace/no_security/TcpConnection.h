@@ -1,5 +1,5 @@
-#ifndef KIQSONT_MUDUO_COPY_TCPCONNECTION
-#define KIQSONT_MUDUO_COPY_TCPCONNECTION
+#ifndef KIQSONT_MUDUO_OVERWRITE_TCPCONNECTION
+#define KIQSONT_MUDUO_OVERWRITE_TCPCONNECTION
 
 #include "noncopyable.h"
 #include "InetAddress.h"
@@ -33,7 +33,7 @@ public:
 
 public:
     TcpConnection(EventLoop *loop, const std::string &nameArg, int sockfd, const InetAddress &loaclAddr, const InetAddress &peerAddr);
-    ~TcpConnection();
+    ~TcpConnection() = default;
 
     EventLoop *getLoop() const { return loop_; }
     const std::string &name() const { return name_; }
@@ -96,6 +96,7 @@ private:
 
     void setState(StateE state) { state_.store(state); }
     void sendInLoop(const void *message, size_t len);
+    void sendInLoop2(std::string message);
     void shutdownInLoop();
     void foreCloseInLoop();
 
@@ -124,4 +125,4 @@ private:
     Buffer outputBUffer_;
 };
 
-#endif // KIQSONT_MUDUO_COPY_TCPCONNECTION
+#endif // KIQSONT_MUDUO_OVERWRITE_TCPCONNECTION
